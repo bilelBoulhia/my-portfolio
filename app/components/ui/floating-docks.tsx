@@ -30,7 +30,7 @@ const FloatingDockDesktop = ({
     className?: string
 }) => {
     const mouseY = useMotionValue(Number.POSITIVE_INFINITY)
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(true)
 
     const toggleNav = () => {
         setIsOpen(!isOpen)
@@ -43,7 +43,7 @@ const FloatingDockDesktop = ({
     })
 
     return (
-        <div className={cn(className, "flex-row flex items-center gap-4")}>
+        <div className={cn(className, "z-100 flex-row flex items-center gap-4")}>
 
             <motion.button
                 onClick={toggleNav}

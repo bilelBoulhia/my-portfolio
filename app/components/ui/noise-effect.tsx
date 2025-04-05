@@ -6,8 +6,9 @@ const NoiseEffect = ()=>{
             position: "fixed",
             backgroundImage: `url(https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png)`,
             backgroundSize: "161px",
+
             backgroundRepeat: "repeat",
-            opacity: 0.025,
+            opacity: 0.024,
             fontSmooth: "antialiased",
             zIndex: 50,
             pointerEvents: 'none',

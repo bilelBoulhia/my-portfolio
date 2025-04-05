@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar"
-import { Button } from "@/components/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@/app/components/ui/Avatar"
+import { Button } from "@/app/components/ui/button"
 import { Grid, MessageCircle, MoreHorizontal, Settings } from "lucide-react"
 import pdp from "@/app/assets/instagprofile/pdp.jpg"
 import post1 from "@/app/assets/instagprofile/post1.jpg"
