@@ -31,29 +31,22 @@ const techstack=[
 
 const Skillsection = ()=>{
     return (
-        <div className='grid  grid-cols-6  gap-10'>
+        <div className='grid  grid-cols-6  gap-[1rem]'>
             {techstack.map((item, i) =>
                 <div
-
                     className='relative overflow-hidden w-[40px]'
                     key={i}>
-                    
                     <motion.div
                         initial={{
                             x: 0 ,
                             y: 0, 
-                       
                         }}
                         animate={{
-                            x: 100 ,
-                        
-                          
-                        
-                          
-                          }}
+                            x: 100
+                        }}
                           transition={{duration:2,delay:0.5}}
                         
-                        className='absolute bg-[background-color:var(--background)] w-[40px] h-full inset-0 '/>
+                        className='absolute bg-[background-color:var(--background)]  w-[45px] h-full inset-0 '/>
                     {item}
                 </div>
             )}

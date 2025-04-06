@@ -52,10 +52,7 @@ export const AnimatedHeading = ({firstsentenceClassName, sentence, className,col
         />
       </div>
 
-      {/*
 
-
-      */}
       <m.div
           whileInView={{zIndex: 2}}
           transition={{delay: 3}}

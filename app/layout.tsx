@@ -74,7 +74,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${genos.variable}  antialiased`}>
        <NoiseEffect/>
-       <FloatingDock className='absolute overflow-hidden top-1/2  right-0 mr-2 -translate-y-1/2 items-center justify-center '  items={links}/>
+       <FloatingDock className='fixed overflow-hidden top-1/2  right-0 mr-2 -translate-y-1/2 items-center justify-center '  items={links}/>
        {children}
       </body>
     </html>
