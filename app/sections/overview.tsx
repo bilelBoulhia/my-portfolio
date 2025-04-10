@@ -1,26 +1,41 @@
 'use client'
-import {AnimatePresence, easeInOut, motion} from "motion/react";
+import { easeInOut, motion} from "motion/react";
 import React from "react";
 import { useMediaQuery } from 'usehooks-ts'
 
-const Overview = ({show} : {show:boolean}) => {
+const Overview = () => {
     const phone= useMediaQuery('(min-width: 768px)')
     return (
-        <AnimatePresence>
-            {show &&
-                <div className='w-full h-full'>
+
+
+                <motion.div
+
+
+                    exit={{opacity:0}}
+                    transition={{delay: 1}}
+                    className='w-full h-full'>
                     <div className=' flex  flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
-                        <motion.img className='w-[15rem] z-2  self-center rounded-2xl h-auto'
-                                    src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-881954-2379004.jpg&fm=jpg'
-                                    exit={{x: phone ? '-200%' : '0',
+                        <motion.img
+
+                            className='w-[15rem] z-2  self-center rounded-2xl h-auto'
+                            src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?cs=srgb&dl=pexels-italo-melo-881954-2379004.jpg&fm=jpg'
+                            exit={{x: phone ? '-200%' : '0',
                                            y: phone ? '0%' : '-200%'
                         }}
-                                    transition={{delay: 0.8}}
-                                    alt={'s'}/>
+                                    transition={{
+                                        transitionEnd: {
+                                            display: "none",
+                                            easeInOut
+                                        },
+                                        duration: 0.5, delay: 0.5
+                                    }}
+                                    alt={'s'}
+                        />
                         <div className='flex flex-col  mt-10 justify-start items-start'>
                             <div className='inline-flex gap-4 text-5xl overflow-hidden font-bold flex-row '>
                                 <div className='overflow-hidden bg-[#0a0a0a]'>
                                     <motion.h1
+
                                         initial={{x: '-200%'}}
                                         animate={{x: 0}}
                                         exit={{width: 0}}
@@ -38,6 +53,7 @@ const Overview = ({show} : {show:boolean}) => {
                                 </div>
 
                                 <motion.span
+
                                     initial={{x: '-200%'}}
                                     animate={{x: 0}}
                                     exit={{width: 0}}
@@ -83,11 +99,9 @@ const Overview = ({show} : {show:boolean}) => {
                         </div>
                     </div>
 
-                </div>
-            }
+                </motion.div>
 
 
-        </AnimatePresence>
     )
 }
 

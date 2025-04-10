@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import { AnimatePresence, type MotionValue, motion, useMotionValue, useSpring, useTransform } from "motion/react"
-import React, {forwardRef,  useImperativeHandle} from "react"
+import React, {forwardRef, ReactNode, useImperativeHandle} from "react"
 import { useRef, useState } from "react"
 
 
@@ -12,9 +12,9 @@ export const FloatingDock = ({
                                  hadnleAction,
 
                              }: {
-    items: { title: string; icon: React.ReactNode;sectionid:number }[]
+    items: { title: string; icon: ReactNode;sectionid:number }[]
     className?: string,
-    hadnleAction: (sectionId:number) => void
+    hadnleAction: (section:number) => void
 }) => {
     const mouseY = useMotionValue(Number.POSITIVE_INFINITY)
     return (
@@ -35,8 +35,7 @@ export const FloatingDock = ({
                 onMouseMove={(e) => mouseY.set(e.pageY)}
                 onMouseLeave={() => mouseY.set(Number.POSITIVE_INFINITY)}
             >
-                <AnimatePresence>
-                    {items.map((item, index) => (
+                {items.map((item, index) => (
                             <motion.div
                                 key={item.title}
                                 initial={{ opacity: 0, scale: 0.8, x: 20 }}
@@ -51,20 +50,11 @@ export const FloatingDock = ({
                                         damping: 25,
                                     },
                                 }}
-                                exit={{
-                                    opacity: 0,
-                                    scale: 0.8,
-                                    x: 20,
-                                    transition: {
-                                        delay: 0,
-                                        duration: 0.15,
-                                    },
-                                }}
+
                             >
                                 <IconContainer onClick={()=>hadnleAction(item.sectionid)}   mouseY={mouseY} {...item} />
                             </motion.div>
-                        ))}
-                </AnimatePresence>
+                ))}
             </motion.div>
         </div>
     )
@@ -75,7 +65,7 @@ export interface iconContainerProps
     mouseY: MotionValue
     title: string
     icon: React.ReactNode,
-    sectionid:number
+
 }
 
 const IconContainer = forwardRef<HTMLDivElement,iconContainerProps>(({mouseY,title,icon,id ,...props},ref)=>{
