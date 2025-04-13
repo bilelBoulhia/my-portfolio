@@ -2,15 +2,14 @@
 import {FloatingDock} from "@/app/components/ui/floating-docks";
 import React, {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "motion/react";
-import {links, screens} from "@/app/constants";
+import {links,  screens} from "@/app/constants";
+import ProjectsSection from "@/app/sections/projects-section";
 
 
-const defaultSection = (
-    <section id='1' className="">
-
-        sdasdasd
-    </section>
+const DefaultSection = (
+    <ProjectsSection/>
 )
+
 
 
 export default function Home() {
@@ -27,10 +26,8 @@ export default function Home() {
                           items={links}/>
 
             <AnimatePresence mode='wait'>
-                <motion.div
-                    key={sectionId}
-                >
-                    {defaultSection}
+                <motion.div key={sectionId}>
+                    {DefaultSection}
                 </motion.div>
             </AnimatePresence>
 

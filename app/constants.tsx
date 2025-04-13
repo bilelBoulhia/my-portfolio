@@ -93,3 +93,53 @@ export const screens = [
             </section>
     }
 ]
+
+
+export const projectList =
+    [ {
+        title: "House of ideas",
+        description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
+        technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+        techColors: ['#818CF8', '#38B2AC', '#3178C6'],
+        imageUrl: "https://i.ibb.co/MD1bSQF4/Capture.png",
+        projectUrl: "https://www.houseofideas.club",
+        githubUrl: "https://github.com/bilelBoulhia/House-of-ideas"
+    },
+        {
+            title: "House of ideas",
+            description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#818CF8', '#38B2AC', '#3178C6'],
+            imageUrl: "https://i.ibb.co/nsSyGkbw/photo-6035050906766133098-w.jpg",
+            projectUrl: "https://www.houseofideas.club",
+            githubUrl: "https://github.com/bilelBoulhia/House-of-ideas"
+        },
+        {
+            title: "Cinemato",
+            description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#818CF8', '#38B2AC', '#3178C6'],
+            imageUrl: "https://i.ibb.co/jZDQw4S2/photo-6035050906766133095-w.jpg",
+            projectUrl: "https://cinema-website-kappa.vercel.app",
+            githubUrl: "https://github.com/bilelBoulhia/cinema-website"
+        },
+        {
+            title: "meteo app",
+            description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#818CF8', '#38B2AC', '#3178C6'],
+            imageUrl: "https://i.ibb.co/XfzrwLVK/login.png",
+            projectUrl: "meteo1-nine.vercel.app",
+            githubUrl: "https://github.com/bilelBoulhia/MeteoGestion"
+        },
+        {
+            title: "Destroch gel",
+            description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#818CF8', '#38B2AC', '#3178C6'],
+            imageUrl: "https://i.ibb.co/0RdnfM3Y/image.png",
+            projectUrl: "https://destrouch-gel.vercel.app",
+            githubUrl: "https://github.com/ALaksell/DESTROUCH-GEL"
+        },
+
+    ]
