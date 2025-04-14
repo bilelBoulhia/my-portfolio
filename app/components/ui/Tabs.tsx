@@ -12,6 +12,13 @@ const TabsList = React.forwardRef<
     React.ElementRef<typeof TabsPrimitive.List>,
     React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ className, ...props }, ref) => (
+    <motion.div
+        exit={{y:'-200%',opacity:0}}
+        transition={{duration:0.1,ease:'linear'}}
+
+    >
+
+
     <TabsPrimitive.List
         ref={ref}
         className={cn(
@@ -20,6 +27,7 @@ const TabsList = React.forwardRef<
         )}
         {...props}
     />
+    </motion.div>
 ))
 TabsList.displayName = TabsPrimitive.List.displayName
 

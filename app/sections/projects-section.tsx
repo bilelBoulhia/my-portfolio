@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/Tabs";
-import Websitesgird from "@/app/sections/websites-grid";
-import MobileGrid from "@/app/sections/mobile-grid";
+import Websitesgird from "@/app/sections/project sections/websites-grid";
+import MobileGrid from "@/app/sections/project sections/mobile-grid";
 
 const tabs=["Websites","Mobile apps","Backends","Bots","Tools"]
-const DefaultSection = () => {
+const ProjectSection = () => {
     const [value, setValue] = useState<string>("Websites");
     const [direction,setDirection]= useState<'left' | 'right'>('left')
     const handleChange = (v: string) => {
@@ -35,12 +35,15 @@ const DefaultSection = () => {
     };
 
     return (
-        <section id="1" className="flex justify-center w-full items-center text-center">
+        <section className="flex justify-center w-full items-center text-center">
+
+
 
             <Tabs defaultValue="Websites" onValueChange={handleChange}>
                 <motion.div
-
-                    exit={{y:'-100%'}}
+                    initial={{y:'-200%'}}
+                    animate={{y:0}}
+                    transition={{duration:0.3,ease:'linear'}}
                 >
                     <TabsList className="bg-neutral-900">
                         <TabsTrigger value={tabs[0]}>{tabs[0]}</TabsTrigger>
@@ -54,10 +57,9 @@ const DefaultSection = () => {
 
                 <motion.div
                     key={value}
-                    initial={{x: direction === 'left'  ?  -500 : 500}}
+                    initial={{x: direction === 'left'  ?  '-100%' : '100%'}}
                     animate={{x: 0}}
-                    exit={{y: -500}}
-                    transition={{duration: 0.3}}
+                    transition={{duration: 0.5,ease:'linear'}}
                 >
                     <TabsContent value={value}>{tabcontent()}</TabsContent>
                 </motion.div>
@@ -67,4 +69,4 @@ const DefaultSection = () => {
     );
 };
 
-export default DefaultSection;
+export default ProjectSection;

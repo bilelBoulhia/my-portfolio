@@ -3,19 +3,16 @@ import {FloatingDock} from "@/app/components/ui/floating-docks";
 import React, {useEffect, useState} from "react";
 import {AnimatePresence, motion} from "motion/react";
 import {links,  screens} from "@/app/constants";
-import ProjectsSection from "@/app/sections/projects-section";
 
 
-const DefaultSection = (
-    <ProjectsSection/>
-)
 
 
 
 export default function Home() {
-    const [sectionId, setid] = useState<number>();
+    const [sectionId, setid] = useState<number>(1);
     const [section, setSection] = useState<React.ReactNode>();
     useEffect(() => {
+
         setSection(screens.find(s => s.id === sectionId)?.content)
     }, [sectionId])
     return (
@@ -27,7 +24,7 @@ export default function Home() {
 
             <AnimatePresence mode='wait'>
                 <motion.div key={sectionId}>
-                    {DefaultSection}
+                    {section ??  screens[0].content}
                 </motion.div>
             </AnimatePresence>
 

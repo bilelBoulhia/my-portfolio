@@ -3,6 +3,8 @@ import SkillSection from "@/app/sections/skills-section";
 import {IconBrandGithub, IconFolder, IconHome, IconPhoneCall} from "@tabler/icons-react";
 import {TbWriting} from "react-icons/tb";
 import React from "react";
+import ProjectsSection from "@/app/sections/projects-section";
+import { motion } from "motion/react";
 export const links = [
     {
         title: "Home",
@@ -51,7 +53,7 @@ export const screens = [
     {
         id: 1,
         content:
-            <section id='1' className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
+            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
                 <div className='min-h-[50vh] w-full '>
                     <Overview/>
                 </div>
@@ -60,51 +62,67 @@ export const screens = [
                 </div>
             </section>
 
-
-
     },
     {
         id: 2,
         content:
-            <section id='2' className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                ddddddddddddddddddddddddddddddddddddddddddddd
+            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
+                <ProjectsSection/>
             </section>
     }
     ,
     {
         id: 3,
         content:
-            <section id='3' className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                ssssssssssssssssssssssssssssssssssssssssssssss
+            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
+                <motion.div
+                    exit={{y: -500}}
+
+                >
+                    section 3
+                </motion.div>
             </section>
     },
     {
         id: 4,
         content:
-            <section id='3' className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                ssssssssssssssssssssssssssssssssssssssssssssss
+            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
+                <motion.div
+                    exit={{y: -500}}
+
+                >
+                    section 4
+                </motion.div>
             </section>
-    },
-    {
-        id: 5,
-        content:
-            <section id='3' className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                ssssssssssssssssssssssssssssssssssssssssssssss
+},
+{
+id: 5,
+    content
+:
+<section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
+
+              <motion.div
+              exit={{x: -500}}
+
+              >
+                  section 5
+              </motion.div>
             </section>
     }
 ]
 
 
-export const projectList =
-    [ {
-        title: "House of ideas",
-        description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
-        technologies: ['Next.js', 'Tailwind', 'TypeScript'],
-        techColors: ['#818CF8', '#38B2AC', '#3178C6'],
-        imageUrl: "https://i.ibb.co/MD1bSQF4/Capture.png",
-        projectUrl: "https://www.houseofideas.club",
-        githubUrl: "https://github.com/bilelBoulhia/House-of-ideas"
-    },
+export const WebsitesList =
+    [
+        {
+            title: "House of ideas",
+            description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#818CF8', '#38B2AC', '#3178C6'],
+            imageUrl: "https://i.ibb.co/MD1bSQF4/Capture.png",
+            projectUrl: "https://www.houseofideas.club",
+            githubUrl: "https://github.com/bilelBoulhia/House-of-ideas"
+        },
         {
             title: "House of ideas",
             description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
