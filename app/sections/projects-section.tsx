@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/ui/Tabs";
 import Websitesgird from "@/app/sections/project sections/websites-grid";
 import MobileGrid from "@/app/sections/project sections/mobile-grid";
+import BackendGrid from "@/app/sections/project sections/beckends-grid";
+import ToolsGrid from "@/app/sections/project sections/Tools-grid";
 
-const tabs=["Websites","Mobile apps","Backends","Bots","Tools"]
+const tabs=["Websites","Mobile apps","Backends","Tools"]
 const ProjectSection = () => {
     const [value, setValue] = useState<string>("Websites");
     const [direction,setDirection]= useState<'left' | 'right'>('left')
@@ -24,11 +26,10 @@ const ProjectSection = () => {
             case tabs[1]:
                 return <MobileGrid/>;
             case tabs[2]:
-                return <p>Backends content here.</p>;
+                return <BackendGrid/>;
             case tabs[3]:
-                return <p>Bots content here.</p>;
-            case tabs[4]:
-                return <p>Tools content here.</p>;
+                return <ToolsGrid/>;
+
             default:
                 return null;
         }
@@ -50,7 +51,6 @@ const ProjectSection = () => {
                         <TabsTrigger value={tabs[1]}>{tabs[1]}</TabsTrigger>
                         <TabsTrigger value={tabs[2]}>{tabs[2]}</TabsTrigger>
                         <TabsTrigger value={tabs[3]}>{tabs[3]}</TabsTrigger>
-                        <TabsTrigger value={tabs[4]}>{tabs[4]}</TabsTrigger>
                     </TabsList>
                 </motion.div>
 

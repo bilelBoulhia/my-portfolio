@@ -17,8 +17,11 @@ const Overview = () => {
             <div className=' flex  flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
                 <motion.img
 
-                    initial={{x:'-120%'}}
-                    animate={{x:0}}
+                    initial={{
+                        x:phone ? '-150%' : 0,
+                        y:phone ? 0 : '-150%'
+                }}
+                    animate={{x:0,y:0}}
 
 
 
