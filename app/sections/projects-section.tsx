@@ -5,7 +5,7 @@ import Websitesgird from "@/app/sections/project sections/websites-grid";
 import MobileGrid from "@/app/sections/project sections/mobile-grid";
 import BackendGrid from "@/app/sections/project sections/beckends-grid";
 import ToolsGrid from "@/app/sections/project sections/Tools-grid";
-import {AnimatePresence} from "motion/react";
+
 
 const tabs=["Websites","Mobile apps","Backends","Tools"]
 const ProjectSection = () => {

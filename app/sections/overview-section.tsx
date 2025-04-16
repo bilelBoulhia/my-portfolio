@@ -12,7 +12,7 @@ const OverviewSection = () => {
             exit={{opacity: 0}}
             transition={{delay: 1}}
             className='w-full h-full'>
-            <div className=' flex  flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
+            <div className=' flex p-3 sm:p-0 flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
                 <motion.img
 
                     initial={{
@@ -38,12 +38,12 @@ const OverviewSection = () => {
                     }}
                     alt={'s'}
                 />
-                <div className='flex flex-col  mt-10 justify-start items-start'>
-                    <div className='inline-flex gap-4 text-5xl overflow-hidden font-bold flex-row '>
+                <div className='flex flex-col   mt-10 justify-start items-start'>
+                    <div className='inline-flex gap-4 text-4xl sm:text-5xl overflow-hidden font-bold flex-row '>
                         <div className='overflow-hidden bg-[#0a0a0a]'>
                             <motion.h1
 
-                                initial={{x: '-200%'}}
+                                initial={{x: '200%'}}
                                 animate={{x: 0}}
                                 exit={{width: 0}}
                                 transition={{
@@ -95,7 +95,7 @@ const OverviewSection = () => {
                                 delay: 0.8, duration: 0.5
                             }}
 
-                            className='text-2xl  font-semibold'>hey there👋,
+                            className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,
                             I am a FullStack Software Devoloper,
                             specialized in web and mobile applications development using .Net and JavaScript
                             frameworks.

@@ -1,6 +1,6 @@
 'use client'
 import TechStackTag from "@/app/components/ui/tech-stack-tag";
-import {AnimatePresence, motion} from "motion/react";
+import {motion} from "motion/react";
 
 import StackIcon from "tech-stack-icons";
 import {TypewriterEffectSmooth} from "@/app/components/ui/TyperWriter";
@@ -37,7 +37,7 @@ const SkillSection = ()=>{
 
 
              <motion.div
-                 className='flex-col overflow-hidden md:flex-row text-center md:text-left gap-10 flex  w-full items-center justify-center '>
+                 className='flex-col p-3 py-6 sm:p-0 overflow-hidden md:flex-row text-center md:text-left gap-10 flex  w-full items-center justify-center '>
             <motion.div
                 exit={{
                     width:0

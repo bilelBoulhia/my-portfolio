@@ -1,21 +1,13 @@
-
-
-
 import {ProjectCardDefault} from "@/app/components/ui/project-card";
-import { motion } from "motion/react";
 import {backendProjects} from "@/app/constants";
-
-
-
 export default function BackendGrid(){
     return(
-        <motion.div
-            exit={{y:'-200%'}}
-            transition={{duration:0.3,ease:'linear'}}
+        <div
+
             className='flex gap-5 flex-wrap items-center justify-center w-full'>
             {backendProjects.map((p,i)=>(
                 <ProjectCardDefault ProjectCardContent={p} index={i} />
             ))}
-        </motion.div>
+        </div>
     )
 }

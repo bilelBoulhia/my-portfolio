@@ -4,9 +4,13 @@ import {IconBrandGithub, IconFolder, IconHome, IconPhoneCall} from "@tabler/icon
 import {TbWriting} from "react-icons/tb";
 import React from "react";
 import ProjectsSection from "@/app/sections/projects-section";
-import {motion} from "motion/react";
 import GistsSection from "@/app/sections/gist-section";
 import GitSection from "@/app/sections/git-section";
+import ContactSection from "@/app/sections/contact-section";
+import {BsGithub} from "react-icons/bs";
+import {InstagramLogoIcon} from "@radix-ui/react-icons";
+
+import {Mail, Phone} from "lucide-react";
 
 export const links = [
     {
@@ -52,6 +56,97 @@ export const links = [
 
 ];
 
+export const contactMethods = [
+    {
+        id: "phone",
+        icon: Phone,
+        label: "+213 549 36 61 79",
+        value: "+213 549 36 61 79",
+        color: "from-purple-500 to-blue-600",
+
+    },
+    {
+        id: "email",
+        icon: Mail,
+        label: "billel.boulahia456@gmail.com",
+        value: "billel.boulahia456@gmail.com",
+        color: "from-blue-500 to-cyan-500",
+
+    },
+    {
+        id: "github",
+        icon: BsGithub,
+        label: "github.com/bilelBoulhia",
+        value: "https://github.com/bilelBoulhia",
+        color: "from-gray-700 to-gray-900",
+        islink:true
+
+    },
+    {
+        id: "instagram",
+        icon: InstagramLogoIcon,
+        label: "instagram.com/bilel_lll_/",
+        value: "https://www.instagram.com/bilel_lll_/",
+        color: "from-pink-500 to-purple-600",
+        islink:true
+
+    },
+    // {
+    //     id: "facebook",
+    //     icon: BsFacebook,
+    //     label: "facebook.com/bi.lel0509/",
+    //     value: "https://www.facebook.com/bi.lel0509/",
+    //     color: "from-blue-600 to-blue-800",
+    //     islink:true
+    //
+    // },
+]
+
+
+export const gists = [{
+    title: "Avoid Getting Your Supabase Project Paused",
+    excerpt: "Supabase is a great tool for quickly building demo applications, especially for learning purposes. Its free-tier offering allows developers to spin up a backend without dealing with complex infrastructure.....",
+    date: "Fev 23, 2025",
+    code: `async function PingSupabase() {
+  const tableName = "your_table_name";
+  //you can use any endpoint that supabase offers
+  const endpoint = '{SUPABASE_URL}/rest/v1/{tableName}';
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "GET",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": 'Bearer {SUPABASE_ANON_KEY}',
+        "Content-Type": "application/json",
+      },
+    });
+`,
+    url: "https://gist.github.com/bilelBoulhia/b30e238fc5e370beee8f7586c68cf1db",
+
+},
+    {
+        title: "Automate Sending Emails on Form Submission (more than 550 Emails/Day for Free): google form as example",
+        excerpt: "In this gist, I'll show you how to send automated emails on form submission. We'll use Google Forms as an example, but you can basically use this script with any form—just make sure to adjust the onFormSubmit function......",
+        date: "Fev 22, 2025",
+        code: `
+for (let service of services) {
+      let quota = parseInt(props.getProperty(service), 10);
+
+        if (quota <= 0) {
+            Logger.log('{service}: quota exhausted.');
+            continue;
+        }
+
+        if (sendEmail(service, email, body)) {
+            props.setProperty(service, (quota - 1).toString());
+            Logger.log('Success with: {service}, quota remaining: {props.getProperty(service)}');
+            return true;
+        }
+    }`,
+        url: "https://gist.github.com/bilelBoulhia/efe15d785a53417b389f49eab91c562a",
+
+    }]
 
 export const screens = [
     {
@@ -92,14 +187,8 @@ export const screens = [
     {
         id: 5,
         content:
-            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-
-                <motion.div
-                    exit={{x: -500}}
-
-                >
-                    section 5
-                </motion.div>
+            <section className="w-full min-h-screen flex  flex-col gap-10 items-center  justify-evenly   ">
+                <ContactSection/>
             </section>
     }
 ]

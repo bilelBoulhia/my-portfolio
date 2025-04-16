@@ -165,7 +165,7 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
     )
 }
 
-const ProjectCardDefault: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) => {
+const ProjectCardDefault: React.FC<ProjectCardProps> = ({ ProjectCardContent }) => {
     return (
         <div className="flex justify-center   items-center py-10">
             <motion.div className="relative   backdrop-filter w-[320px] sm:w-[350px] shadow-4xl rounded-xl overflow-hidden">

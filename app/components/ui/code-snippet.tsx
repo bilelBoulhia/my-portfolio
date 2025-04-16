@@ -1,16 +1,12 @@
 "use client"
 import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/Card"
-import { motion } from "motion/react"
-
-
 interface CodeSnippetProps {
     code: string
     language?: string
     title?: string
     className?: string
 }
-
 export function CodeSnippet({ code, language, title, className }: CodeSnippetProps) {
 
     return (

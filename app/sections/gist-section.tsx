@@ -7,108 +7,31 @@ import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/app/compon
 import {ArrowRight, Calendar} from "lucide-react";
 import {Button} from "@/app/components/ui/button";
 import {CodeSnippet} from "@/app/components/ui/code-snippet";
-import {easeInOut, motion} from "motion/react";
+import {motion} from "motion/react";
+import AnimatedHeader from "@/app/components/ui/animated-header";
+import {gists} from "@/app/constants";
+import {useMediaQuery} from "usehooks-ts";
 
-
-const gists = [{
-    title: "Avoid Getting Your Supabase Project Paused",
-    excerpt: "Supabase is a great tool for quickly building demo applications, especially for learning purposes. Its free-tier offering allows developers to spin up a backend without dealing with complex infrastructure.....",
-    date: "Fev 23, 2025",
-    code: `async function PingSupabase() {
-  const tableName = "your_table_name";
-  //you can use any endpoint that supabase offers
-  const endpoint = '{SUPABASE_URL}/rest/v1/{tableName}';
-
-  try {
-    const response = await fetch(endpoint, {
-      method: "GET",
-      headers: {
-        "apikey": SUPABASE_ANON_KEY,
-        "Authorization": 'Bearer {SUPABASE_ANON_KEY}',
-        "Content-Type": "application/json",
-      },
-    });
-`,
-    url: "https://gist.github.com/bilelBoulhia/b30e238fc5e370beee8f7586c68cf1db",
-
-},
-    {
-        title: "Automate Sending Emails on Form Submission (more than 550 Emails/Day for Free): google form as example",
-        excerpt: "In this gist, I'll show you how to send automated emails on form submission. We'll use Google Forms as an example, but you can basically use this script with any form—just make sure to adjust the onFormSubmit function......",
-        date: "Fev 22, 2025",
-        code: `
-for (let service of services) {
-      let quota = parseInt(props.getProperty(service), 10);
-
-        if (quota <= 0) {
-            Logger.log('{service}: quota exhausted.');
-            continue;
-        }
-
-        if (sendEmail(service, email, body)) {
-            props.setProperty(service, (quota - 1).toString());
-            Logger.log('Success with: {service}, quota remaining: {props.getProperty(service)}');
-            return true;
-        }
-    }`,
-        url: "https://gist.github.com/bilelBoulhia/efe15d785a53417b389f49eab91c562a",
-
-    }]
 
 
 const GistsSection = () => {
 
 
     return (
-
-
         <div className='w-full flex flex-col gap-10 items-center justify-center '>
-            <div className='inline-flex gap-4 text-5xl absolute top-10 left-1/2 -translate-x-1/2 overflow-hidden font-bold flex-row '>
-                <div className='overflow-hidden  bg-[#0a0a0a]'>
-                    <motion.h1
 
-                        initial={{x: '-200%'}}
-                        animate={{x: 0}}
-                        exit={{width: 0}}
-                        transition={{
-                            transitionEnd: {
-                                display: "none",
-                                ease:"linear",
-                            },
-                            duration: 0.5
-                        }}
-                        className='overflow-hidden  '
-                    >
-                        My
-                    </motion.h1>
+            <div>
+                <div>
+                    <AnimatedHeader firstword={'My'} secondword={'Gists'}/>
                 </div>
-
-                <motion.span
-
-                    initial={{x: '-200%'}}
-                    animate={{x: 0}}
-                    exit={{width: 0}}
-                    style={{zIndex: -1}}
-                    transition={{
-                        transitionEnd: {
-                            display: "none",
-                            ease:"linear",
-                        },
-                        duration: 0.5, delay: 0.25
-                    }}
-                > Gists
-                </motion.span>
-
-
             </div>
 
-
-            <div className="flex-wrap mt-20 flex gap-10">
+            <div className="flex-wrap  mt-[4rem] flex gap-10">
                 {gists.map((gist) => (
                     <div className="overflow-hidden  p-3 max-w-md mx-auto">
                         <Card
-                            initial={{x:'150%'}}
-                            animate={{x:0}}
+                            initial={{x: '150%'}}
+                            animate={{x: 0}}
                             exit={{x: 500}}
                             transition={{duration: 0.4, ease: 'linear'}}
                             className='min-h-[35rem] border border-zinc-800 rounded-xl overflow-hidden   bg-gradient-to-br from-zinc-900 to-zinc-950 shadow-lg transition-all duration-300'>

@@ -1,186 +1,139 @@
 "use client"
-
-import { useState, useEffect } from "react"
-import { Github, Mail, Phone, Instagram, Facebook, ExternalLink } from "lucide-react"
-
-import { Card } from "@/app/components/ui/Card"
-import {Button} from "@/app/components/ui/button";
+import NumberFlow, {continuous} from '@number-flow/react'
+import {Card} from "@/app/components/ui/Card"
+import {motion} from "motion/react";
+import {useEffect, useState} from "react";
+import AnimatedHeader from "@/app/components/ui/animated-header";
+import {contactMethods} from "@/app/constants";
+import {useMediaQuery} from "usehooks-ts";
 
 export default function ContactSection() {
-    const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-    const [copied, setCopied] = useState<string | null>(null)
 
-    // Reset copied state after 2 seconds
+    const phone = useMediaQuery('(min-width: 526px)')
+    const [value, setValue] = useState(0)
     useEffect(() => {
-        if (copied) {
-            const timeout = setTimeout(() => setCopied(null), 2000)
-            return () => clearTimeout(timeout)
-        }
-    }, [copied])
-
-    const handleCopy = (text: string, type: string) => {
-        navigator.clipboard.writeText(text)
-        setCopied(type)
-    }
-
-    const contactMethods = [
-        {
-            id: "phone",
-            icon: Phone,
-            label: "+1 (234) 567-8901",
-            value: "+12345678901",
-            color: "from-purple-500 to-blue-600",
-            hoverColor: "group-hover:from-purple-600 group-hover:to-blue-700",
-        },
-        {
-            id: "email",
-            icon: Mail,
-            label: "your.email@example.com",
-            value: "your.email@example.com",
-            color: "from-blue-500 to-cyan-500",
-            hoverColor: "group-hover:from-blue-600 group-hover:to-cyan-600",
-        },
-        {
-            id: "github",
-            icon: Github,
-            label: "github.com/yourusername",
-            value: "https://github.com/yourusername",
-            color: "from-gray-700 to-gray-900",
-            hoverColor: "group-hover:from-gray-800 group-hover:to-black",
-            isLink: true,
-        },
-        {
-            id: "instagram",
-            icon: Instagram,
-            label: "instagram.com/yourusername",
-            value: "https://instagram.com/yourusername",
-            color: "from-pink-500 to-purple-600",
-            hoverColor: "group-hover:from-pink-600 group-hover:to-purple-700",
-            isLink: true,
-        },
-        {
-            id: "facebook",
-            icon: Facebook,
-            label: "facebook.com/yourusername",
-            value: "https://facebook.com/yourusername",
-            color: "from-blue-600 to-blue-800",
-            hoverColor: "group-hover:from-blue-700 group-hover:to-blue-900",
-            isLink: true,
-        },
-    ]
-
+        const inte = setInterval(() => {
+            setValue((prev) => {
+                if (prev >= 12) {
+                    clearInterval(inte)
+                    return prev
+                }
+                return prev + 1
+            })
+        }, 60)
+        return () => clearInterval(inte)
+    }, [])
     return (
-        <section className="w-full py-16 bg-black text-white overflow-hidden relative" id="contact">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-                <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl animate-blob"></div>
-                <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-purple-500 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-                <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-500 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
-            </div>
 
-            <div className="container px-4 md:px-6 mx-auto relative z-10">
-                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-                    <div className="inline-block">
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 pb-2">
-                            Connect With Me
-                        </h2>
-                        <div className="h-1 w-full bg-gradient-to-r from-blue-400 to-purple-600 rounded-full"></div>
-                    </div>
-                    <p className="max-w-[700px] text-gray-400 md:text-xl">Let's collaborate on something amazing together</p>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                    {contactMethods.map((method) => (
-                        <Card
-                            key={method.id}
-                            className={`group relative overflow-hidden bg-[#111] border-0 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg hover:shadow-${method.id === "github" ? "gray" : "blue"}-900/20`}
-                            onMouseEnter={() => setHoveredCard(method.id)}
-                            onMouseLeave={() => setHoveredCard(null)}
-                        >
-                            <div
-                                className={`absolute inset-0 bg-gradient-to-br ${method.color} ${method.hoverColor} opacity-20 transition-opacity duration-300`}
-                            ></div>
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full"></div>
+        <div className="flex overflow-hidden  flex-col p-3 gap-10  items-center">
 
-                            <div className="p-6 relative z-10">
-                                <div className="flex items-center mb-4">
-                                    <div className={`p-3 rounded-xl bg-gradient-to-br ${method.color}`}>
-                                        <method.icon className="h-6 w-6 text-white" />
-                                    </div>
-                                    <div className="ml-4">
-                                        <h3 className="text-lg font-semibold text-white">
-                                            {method.id.charAt(0).toUpperCase() + method.id.slice(1)}
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center justify-between">
-                                    <p className="text-gray-300 truncate max-w-[70%]">{method.label}</p>
-
-                                    {method.isLink ? (
-                                        <a
-                                            href={method.value}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white bg-white/10 hover:bg-white/20 p-2 rounded-lg transition-colors duration-200 flex items-center"
-                                        >
-                                            <ExternalLink className="h-4 w-4" />
-                                        </a>
-                                    ) : (
-                                        <Button
-                                            variant="ghost"
-                                            size="sm"
-                                            onClick={() => handleCopy(method.value, method.id)}
-                                            className="text-white bg-white/10 hover:bg-white/20 p-2 h-9 rounded-lg transition-colors duration-200"
-                                        >
-                                            {copied === method.id ? (
-                                                <span className="text-xs">Copied!</span>
-                                            ) : (
-                                                <span className="text-xs">Copy</span>
-                                            )}
-                                        </Button>
-                                    )}
-                                </div>
-
-                                {/* Animated border on hover */}
-                                <div
-                                    className={`absolute inset-0 border-2 border-transparent transition-all duration-500 ${hoveredCard === method.id ? "border-gradient-animated" : ""}`}
-                                ></div>
-                            </div>
-                        </Card>
-                    ))}
-                </div>
-
-                {/* Stats-inspired section */}
-                <div className="mt-16 bg-[#111] rounded-xl p-6 border border-[#222]">
-                    <div className="flex flex-col md:flex-row items-center justify-between">
-                        <div className="text-center md:text-left mb-6 md:mb-0">
-                            <h3 className="text-2xl font-bold text-white mb-2">Current Status</h3>
-                            <div className="flex items-center justify-center md:justify-start">
-                                <span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-                                <span className="text-gray-300">Available for new opportunities</span>
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-blue-500 mb-1">24h</div>
-                                <div className="text-sm text-gray-400">Response Time</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-purple-500 mb-1">GMT+2</div>
-                                <div className="text-sm text-gray-400">Time Zone</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-3xl font-bold text-cyan-500 mb-1">100%</div>
-                                <div className="text-sm text-gray-400">Satisfaction</div>
-                            </div>
-                        </div>
-                    </div>
+            <div>
+                <div>
+                    <AnimatedHeader firstword={'My'} secondword={'Contacts'}/>
                 </div>
             </div>
 
 
-        </section>
+            <motion.div
+                transition={{duration: 0.3, ease: 'linear'}}
+                className="flex flex-wrap overflow-hidden  items-center justify-center max-w-6xl  mt-[4rem] gap-6 mt-8">
+                {contactMethods.map((method, i) => (
+                    <Card
+                        initial={{y:phone ? (i === 0 ? -200 : -200 * (i) + 0.5) : 0,
+                                  x:phone ? (i === 0 ? -200 : -200 * (i) + 0.5) : '-160%'
+
+                        }}
+                        animate={{y: 0,x:0}}
+                        exit={{y:phone ? ( i === 0 ? 200 : 200 * (i) + 0.5) : 0,
+                               x:phone ? ( i === 0 ? 200 : 200 * (i) + 0.5) : '160%'
+                        }}
+                        onClick={() => method.islink ? location.href = method.value : ''}
+                        transition={{duration:phone ? 0.6 : 0.3, ease: 'linear'}}
+                        key={method.id}
+                        className={`group relative ${method.islink && 'cursor-pointer'}  overflow-hidden min-w-[15rem] bg-[#111] border-0`}>
+                        <div
+                            className={`absolute  inset-0 bg-gradient-to-br ${method.color} opacity-20 transition-opacity duration-300`}
+                        ></div>
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full"></div>
+
+                        <div className="p-6 relative ">
+                            <div className="flex items-center mb-4">
+                                <div>
+                                    <method.icon className="h-6 w-6 text-white"/>
+                                </div>
+
+                                <div className="ml-4">
+                                    <h3 className="text-lg font-semibold text-white">
+                                        {method.id.charAt(0).toUpperCase() + method.id.slice(1)}
+                                    </h3>
+                                </div>
+                            </div>
+                            <p className="text-gray-300">{method.label}</p>
+                        </div>
+                    </Card>
+                ))}
+            </motion.div>
+
+
+            <motion.div
+
+                initial={{y: '100%'}}
+                animate={{y: 0}}
+                exit={{y: '120%'}}
+                transition={{
+
+                    duration: 0.3,
+                    ease: 'linear'
+                }}
+
+                className="mt-16 bg-[#111] rounded-xl p-6  border border-[#222]">
+                <div className="inline-flex flex-row items-center justify-between gap-15">
+                    <div className="text-center ">
+                        <h3 className="text-2xl font-bold text-white mb-2">Current Status <span
+                            className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2 animate-pulse"></span></h3>
+
+                    </div>
+
+                    <div className="inline-flex justify-evenly items-center  gap-6">
+                        <div className="text-center">
+                            <div className="text-3xl font-bold text-blue-500 mb-1">
+                                <NumberFlow
+                                    locales="en-US"
+                                    willChange
+                                    value={value}
+                                    isolate
+                                    plugins={[continuous]}
+                                    opacityTiming={{
+                                        duration: 250,
+                                        easing: 'ease-out'
+                                    }}
+                                    transformTiming={{
+                                        easing: `linear(0, 0.0033 0.8%, 0.0263 2.39%, 0.0896 4.77%, 0.4676 15.12%, 0.5688, 0.6553, 0.7274, 0.7862, 0.8336 31.04%, 0.8793, 0.9132 38.99%, 0.9421 43.77%, 0.9642 49.34%, 0.9796 55.71%, 0.9893 62.87%, 0.9952 71.62%, 0.9983 82.76%, 0.9996 99.47%)`,
+                                        duration: 500
+                                    }}
+
+                                />
+                                <span>h</span></div>
+                            <div className="text-sm text-gray-400">Response Time</div>
+                        </div>
+                        <div className="text-center overflow-hidden">
+                            <h3 className="text-3xl z-15  font-bold text-purple-500 overflow-hidden mb-1">
+                                GMT
+                                <motion.div
+                                    initial={{x: '100%'}}
+                                    animate={{x: 0}}
+                                    transition={{duration: 0.6, delay: 0.3, type: 'spring'}}
+                                    className='inline-flex'>+1
+                                </motion.div>
+                            </h3>
+                            <div className="text-sm text-gray-400">Time Zone</div>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
+        </div>
+
+
     )
 }

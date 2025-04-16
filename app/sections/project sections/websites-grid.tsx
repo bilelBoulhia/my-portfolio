@@ -1,9 +1,6 @@
 import {WebsitesList} from "@/app/constants";
 import {ProjectCard} from "@/app/components/ui/project-card";
 import React from "react";
-import { motion } from "motion/react";
-
-
 export default function Websitesgird(){
     return (
         <div

@@ -1,6 +1,6 @@
 'use client'
 import {FloatingDock} from "@/app/components/ui/floating-docks";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {AnimatePresence, motion} from "motion/react";
 import {links,  screens} from "@/app/constants";
 
