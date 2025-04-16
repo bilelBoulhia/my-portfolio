@@ -14,16 +14,10 @@ const AnimatedHeader : React.FC<props> = ({firstword,className,secondword})=>{
             className={cn(className,"inline-flex gap-4 text-4xl sm:text-5xl absolute top-10 left-1/2 -translate-x-1/2 overflow-hidden font-bold flex-row")}>
             <div className="overflow-hidden  bg-[#0a0a0a]">
                 <m.h1
-                    initial={{x: "-200%"}}
+                    initial={{x: "120%"}}
                     animate={{x: 0}}
                     exit={{width: 0}}
-                    transition={{
-                        transitionEnd: {
-                            display: "none",
-                            ease: "linear",
-                        },
-                        duration: 0.5,
-                    }}
+                    transition={{duration: 0.5}}
                     className="overflow-hidden"
                 >
                     {firstword}
@@ -31,18 +25,11 @@ const AnimatedHeader : React.FC<props> = ({firstword,className,secondword})=>{
             </div>
 
             <m.span
-                initial={{x: "-200%"}}
+                initial={{x: "-120%"}}
                 animate={{x: 0}}
                 exit={{width: 0}}
                 style={{zIndex: -1}}
-                transition={{
-                    transitionEnd: {
-                        display: "none",
-                        ease: "linear",
-                    },
-                    duration: 0.5,
-                    delay: 0.25,
-                }}
+                transition={{duration: 0.5, delay: 0.25}}
             >
                 {secondword}
             </m.span>

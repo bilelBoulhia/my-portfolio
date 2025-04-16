@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { FaGithub } from "react-icons/fa"
 import { m } from "motion/react"
-import { useMediaQuery } from "usehooks-ts"
+
 
 interface ProjectCardContent {
     title: string
@@ -21,20 +21,12 @@ interface ProjectCardProps {
     index: number
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) => {
-    const phone = useMediaQuery("(min-width: 768px)")
+const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
+
     return (
         <div className="flex justify-center  items-center py-10">
-            <m.div className="relative backdrop-filter w-[320px] sm:w-[400px] md:w-[700px] shadow-4xl rounded-xl overflow-hidden">
-                <m.div
-                    initial={{ x: 0 }}
-                    animate={{ x: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, ease: "easeIn", delay: index * 0.1 }}
-                    className="absolute w-[50%] bg-black p-15 hidden md:inline inset-0"
-                >
-                    <Image src={ProjectCardContent.imageUrl || ""} alt="Project" layout="fill" objectFit="cover" />
-                </m.div>
+            <div className="relative backdrop-filter w-[320px] sm:w-[400px] md:w-[700px] shadow-4xl rounded-xl overflow-hidden">
+
                 <div className="relative z-10 h-full flex flex-col-reverse items-center md:items-stretch   md:flex-row ">
                     <div className="relative z-10  p-4 flex  w-full  md:w-[50%] flex-col bg-gray-800/30 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
                         <div className="flex items-center justify-between mb-2">
@@ -61,21 +53,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) 
                         </div>
                     </div>
 
-                    <m.div
-                        initial={{ width: phone ? 0 : "100%" }}
-                        animate={{ width: phone ? "50%" : "100%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, ease: "easeIn", delay: index * 0.1 }}
-                        className="w-full z-50"
+                    <div
+                        className=" z-50"
                     >
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
                             <div className="relative h-52 overflow-hidden">
                                 <Image src={ProjectCardContent.imageUrl || ""} alt="Project" layout="fill" objectFit="cover " />
                             </div>
                         </Link>
-                    </m.div>
+                    </div>
                 </div>
-            </m.div>
+            </div>
         </div>
     )
 }

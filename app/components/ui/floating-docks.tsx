@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { AnimatePresence, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import type React from "react"
 import { forwardRef, type ReactNode, useImperativeHandle, useRef, useState } from "react"
 
@@ -10,7 +10,7 @@ export const FloatingDock = ({
                                  className,
                                  hadnleAction,
                              }: {
-    items: { title: string; icon: ReactNode; sectionid: number }[]
+    items: {  icon: ReactNode; sectionid: number }[]
     className?: string
     hadnleAction: (section: number) => void
 }) => {
@@ -83,7 +83,7 @@ export const FloatingDock = ({
             <div className={`items-center w-[4rem] m-auto flex flex-col gap-4 rounded-2xl bg-neutral-900 py-4 pb-3`}>
                 {items.map((item, index) => (
                     <motion.div
-                        key={item.title}
+                        key={index}
                         initial={{ opacity: 0, scale: 0.8, x: 20 }}
                         animate={{
                             opacity: 1,
@@ -106,36 +106,19 @@ export const FloatingDock = ({
 }
 
 export interface iconContainerProps extends React.ButtonHTMLAttributes<HTMLDivElement> {
-    title: string
     icon: React.ReactNode
 }
 
 const IconContainer = forwardRef<HTMLDivElement, iconContainerProps>(({ title, icon, id, ...props }, ref) => {
     const innerRef = useRef<HTMLDivElement>(null)
     useImperativeHandle(ref, () => innerRef.current as HTMLDivElement)
-    const [hovered, setHovered] = useState(false)
-
     return (
         <div {...props}>
             <motion.div
                 ref={innerRef}
-                onMouseEnter={() => setHovered(true)}
-                onMouseLeave={() => setHovered(false)}
                 className="aspect-square h-10 w-10 rounded-full bg-neutral-800 flex items-center justify-center relative"
                 whileTap={{ scale: 0.95 }}
             >
-                <AnimatePresence>
-                    {hovered && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 10, x: "-50%" }}
-                            animate={{ opacity: 1, y: 0, x: "-50%" }}
-                            exit={{ opacity: 0, y: 2, x: "-50%" }}
-                            className="px-2 py-0.5 whitespace-pre rounded-md border bg-neutral-800 border-neutral-900 text-white absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
-                        >
-                            {title}
-                        </motion.div>
-                    )}
-                </AnimatePresence>
                 <motion.div className="flex items-center justify-center">{icon}</motion.div>
             </motion.div>
         </div>
