@@ -4,6 +4,7 @@ import "./globals.css";
 import NoiseEffect from "@/app/components/ui/noise-effect";
 import React from "react";
 import {domAnimation, LazyMotion} from "motion/react"
+import {Analytics} from "@vercel/analytics/next";
 
 const genos = Genos({
   variable: "--font-genos",
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className={`${genos.variable}  overflow-x-hidden antialiased`}>
        <NoiseEffect/>
        {children}
+       <Analytics mode="production" />;
       </body>
     </LazyMotion>
     </html>
