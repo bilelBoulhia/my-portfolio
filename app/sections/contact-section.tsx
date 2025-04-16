@@ -28,9 +28,9 @@ export default function ContactSection() {
 
         <div className="flex overflow-hidden  flex-col p-3 gap-10  items-center">
 
-            <div>
-                <div>
-                    <AnimatedHeader firstword={'My'} secondword={'Contacts'}/>
+            <div className='overflow-hidden'>
+                <div className='overflow-hidden '>
+                    <AnimatedHeader firstword={'Contact'} secondword={'info'}/>
                 </div>
             </div>
 

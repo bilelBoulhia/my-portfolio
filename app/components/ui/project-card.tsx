@@ -132,17 +132,17 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
-                            <m.div
+                            <div
                                 className="relative h-[40vh] sm:h-[65vh] overflow-hidden"
-                                transition={{ type: "spring", stiffness: 300 }}
                             >
                                 <Image
                                     src={ProjectCardContent.imageUrl || "/placeholder.svg"}
                                     alt="Project"
                                     layout="fill"
+
                                     objectFit="contain"
                                 />
-                            </m.div>
+                            </div>
                         </Link>
                     </m.div>
                 </div>

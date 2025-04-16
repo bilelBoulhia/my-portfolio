@@ -20,8 +20,8 @@ const GistsSection = () => {
     return (
         <div className='w-full flex flex-col gap-10 items-center justify-center '>
 
-            <div>
-                <div>
+            <div className='overflow-hidden'>
+                <div className='overflow-hidden'>
                     <AnimatedHeader firstword={'My'} secondword={'Gists'}/>
                 </div>
             </div>

@@ -9,8 +9,8 @@ export default function GitSection() {
     return (
         <div className="flex  flex-col p-3 gap-10 justify-between items-center">
 
-            <div>
-                <div>
+            <div className='overflow-hidden'>
+                <div className='overflow-hidden'>
                     <AnimatedHeader firstword={'Github'} secondword={'Stats'}/>
                 </div>
             </div>

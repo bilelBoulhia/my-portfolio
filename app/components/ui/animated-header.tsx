@@ -1,40 +1,63 @@
-import { cn } from "@/lib/utils";
-import {HTMLMotionProps, m} from "motion/react";
-import React from "react";
+import { cn } from "@/lib/utils"
+import { type HTMLMotionProps, m } from "motion/react"
+import type React from "react"
 
-interface props extends HTMLMotionProps<'div'>{
-    firstword:string,
-    secondword:string,
-    className?:string
+interface Props extends HTMLMotionProps<"div"> {
+    firstword: string
+    secondword: string
+    className?: string
 }
 
-const AnimatedHeader : React.FC<props> = ({firstword,className,secondword})=>{
+const AnimatedHeader: React.FC<Props> = ({ firstword, className, secondword, ...props }) => {
     return (
         <m.div
-            className={cn(className,"inline-flex gap-4 text-4xl sm:text-5xl absolute top-10 left-1/2 -translate-x-1/2 overflow-hidden font-bold flex-row")}>
-            <div className="overflow-hidden  bg-[#0a0a0a]">
+            className={cn(
+                className,
+                "inline-flex   gap-4 overflow-visible text-4xl sm:text-5xl absolute top-10 left-1/2 -translate-x-1/2 overflow-hidden font-bold flex-row",
+            )}
+            {...props}
+        >
+            <div className="overflow-hidden w-full bg-[#0a0a0a] ">
                 <m.h1
-                    initial={{x: "120%"}}
-                    animate={{x: 0}}
-                    exit={{width: 0}}
-                    transition={{duration: 0.5}}
-                    className="overflow-hidden"
+                    initial={{ x: "130%" }}
+                    animate={{ x: 0 }}
+                    exit={{x: "130%"}}
+                    transition={{
+                        duration: 0.7,
+                        ease: [0.22, 1, 0.36, 1],
+                        type: "spring",
+                        damping: 20,
+                        stiffness: 100,
+                    }}
+
                 >
                     {firstword}
                 </m.h1>
             </div>
 
-            <m.span
-                initial={{x: "-120%"}}
-                animate={{x: 0}}
-                exit={{width: 0}}
-                style={{zIndex: -1}}
-                transition={{duration: 0.5, delay: 0.25}}
-            >
-                {secondword}
-            </m.span>
+            <div style={{zIndex:-1}} className='absolute overflow-hidden inset-0 w-[30%] bg-[#0a0a0a] h-full '/>
+
+                <m.span
+                    initial={{x: "-130%"}}
+                    animate={{x: 0}}
+                    exit={{x: "-130%"}}
+                    style={{zIndex: -2}}
+                    transition={{
+                        duration: 0.7,
+                        delay: 0.15,
+                        ease: [0.22, 1, 0.36, 1],
+                        type: "spring",
+                        damping: 22,
+                        stiffness: 90,
+                    }}
+
+                >
+                    {secondword}
+                </m.span>
+
+
         </m.div>
     )
 }
 
-export  default  AnimatedHeader;
+export default AnimatedHeader

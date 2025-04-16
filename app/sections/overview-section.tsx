@@ -1,5 +1,5 @@
 'use client'
-import {easeInOut, motion} from "motion/react";
+import {easeInOut, m, motion} from "motion/react";
 import React from "react";
 import {useMediaQuery} from 'usehooks-ts'
 
@@ -39,80 +39,78 @@ const OverviewSection = () => {
                 />
                 <div className='flex flex-col   mt-10 justify-start items-start'>
                     <div className='inline-flex  gap-4 text-4xl sm:text-5xl overflow-hidden  font-bold flex-row '>
-                        <div className='overflow-hidden  bg-[#0a0a0a]'>
-                            <motion.h1
-
-                                initial={{x: '200%'}}
+                        <div className="overflow-hidden bg-[#0a0a0a]">
+                            <m.h1
+                                initial={{x: "100%"}}
                                 animate={{x: 0}}
-                                exit={{width: 0}}
+                                exit={{x: "110%"}}
                                 transition={{
-                                    transitionEnd: {
-                                        display: "none",
-                                        easeInOut
-                                    },
-                                    duration: 0.5
+                                    duration: 0.7,
+                                    ease: [0.22, 1, 0.36, 1],
+                                    type: "spring",
+                                    damping: 20,
+                                    stiffness: 100,
                                 }}
-                                className='overflow-hidden  '
+                                className="overflow-hidden"
                             >
-                                Billel
-                            </motion.h1>
+                                billel
+                            </m.h1>
                         </div>
 
-                        <motion.span
-
-                            initial={{x: '-200%'}}
+                        <m.span
+                            initial={{x: "-100%"}}
                             animate={{x: 0}}
-                            exit={{width: 0}}
+                            exit={{x: "-150%"}}
                             style={{zIndex: -1}}
                             transition={{
-                                transitionEnd: {
-                                    display: "none",
-                                    easeInOut
-                                },
-                                duration: 0.5, delay: 0.25
+                                duration: 0.7,
+                                delay: 0.15,
+                                ease: [0.22, 1, 0.36, 1],
+                                type: "spring",
+                                damping: 22,
+                                stiffness: 90,
                             }}
-                        > Boulahia
-                        </motion.span>
-
+                        >
+                          boulahia
+                        </m.span>
 
                     </div>
+                        <motion.div
 
-
-                    <motion.div
-
-                        exit={{width: 0}}
-                        transition={{
-                            delay: 0.5,
-                        }}
-
-                        className='flex overflow-hidden flex-col h-full justify-center  max-w-xl'>
-                        <motion.p
-                            initial={{y: 250}}
-                            animate={{y: 0}}
                             exit={{width: 0}}
                             transition={{
-                                delay: 0.8, duration: 0.5
+                                delay: 0.5,
                             }}
 
-                            className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,
-                            I am a Full Stack Software Developer with a focus on building web and mobile applications
-                            using .NET, Java,
-                            and JavaScript frameworks like React and Next.js. i enjoy programming as much as a tech
-                            priest enjoys his daily prayer to the machine spirit.
+                            className='flex overflow-hidden flex-col h-full justify-center  max-w-xl'>
+                            <motion.p
+                                initial={{y: 250}}
+                                animate={{y: 0}}
+                                exit={{width: 0}}
+                                transition={{
+                                    delay: 0.8, duration: 0.5
+                                }}
 
-                        </motion.p>
-                        <div className=' overflow-hidden'>
-                            <CustomLink href={'https://turquoise-cynthie-96.tiiny.site'}/>
-                        </div>
+                                className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,
+                                I am a Full Stack Software Developer with a focus on building web and mobile
+                                applications
+                                using .NET, Java,
+                                and JavaScript frameworks like React and Next.js. i enjoy programming as much as a tech
+                                priest enjoys his daily prayer to the machine spirit.
 
-                    </motion.div>
+                            </motion.p>
+                            <div className=' overflow-hidden'>
+                                <CustomLink href={'https://turquoise-cynthie-96.tiiny.site'}/>
+                            </div>
+
+                        </motion.div>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
 
+            )
+            }
 
-    )
-}
-
-export default OverviewSection;
+            export default OverviewSection;
