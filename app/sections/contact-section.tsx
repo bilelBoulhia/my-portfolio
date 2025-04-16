@@ -41,12 +41,12 @@ export default function ContactSection() {
                 {contactMethods.map((method, i) => (
                     <Card
                         initial={{y:phone ? (i === 0 ? -200 : -200 * (i) + 0.5) : 0,
-                                  x:phone ? (i === 0 ? -200 : -200 * (i) + 0.5) : '-160%'
+                                  x:phone ?  0 : (i === 0 ? -200 : -200 * (i) + 0.5)
 
                         }}
                         animate={{y: 0,x:0}}
-                        exit={{y:phone ? ( i === 0 ? 200 : 200 * (i) + 0.5) : 0,
-                               x:phone ? ( i === 0 ? 200 : 200 * (i) + 0.5) : '160%'
+                        exit={{y:phone ? ( i === 0 ? 300 : 300 * (i) + 0.5) : 0,
+                               x:phone ?  0 : ( i === 0 ? 200 : 200 * (i) + 0.5)
                         }}
                         onClick={() => method.islink ? location.href = method.value : ''}
                         transition={{duration:phone ? 0.6 : 0.3, ease: 'linear'}}
