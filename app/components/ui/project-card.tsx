@@ -53,7 +53,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
                         </div>
                     </div>
 
-                    <div className=" w-full z-50">
+                    <div className="  w-full md:w-[50%] z-50">
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
                             <div className="relative h-52 overflow-hidden">
                                 <Image src={ProjectCardContent.imageUrl || ""} alt="Project" layout="fill" objectFit="cover " />
