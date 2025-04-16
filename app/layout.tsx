@@ -3,7 +3,7 @@ import {Genos} from "next/font/google";
 import "./globals.css";
 import NoiseEffect from "@/app/components/ui/noise-effect";
 import React from "react";
-
+import {domAnimation, LazyMotion} from "motion/react"
 
 const genos = Genos({
   variable: "--font-genos",
@@ -38,10 +38,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+    <LazyMotion features={domAnimation} >
       <body className={`${genos.variable}  overflow-x-hidden antialiased`}>
        <NoiseEffect/>
        {children}
       </body>
+    </LazyMotion>
     </html>
   );
 }

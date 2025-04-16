@@ -1,7 +1,7 @@
 "use client";
 
 import {cn} from "@/lib/utils";
-import { motion} from "motion/react";
+import { m} from "motion/react";
 
 export const TypewriterEffectSmooth = ({
                                            words,
@@ -46,7 +46,7 @@ export const TypewriterEffectSmooth = ({
 
     return (
         <div className={cn("flex space-x-1 my-6", className)}>
-            <motion.div
+            <m.div
                 className="overflow-hidden pb-2"
                 initial={{
                     width: "0%",
@@ -70,8 +70,8 @@ export const TypewriterEffectSmooth = ({
                 >
                     {renderWords()}{" "}
                 </div>{" "}
-            </motion.div>
-            <motion.span
+            </m.div>
+            <m.span
                 initial={{
                     opacity: 0,
                 }}
@@ -88,7 +88,7 @@ export const TypewriterEffectSmooth = ({
                     "block rounded-sm w-[4px]  h-12 bg-blue-500",
                     cursorClassName
                 )}
-            ></motion.span>
+            ></m.span>
         </div>
     );
 };

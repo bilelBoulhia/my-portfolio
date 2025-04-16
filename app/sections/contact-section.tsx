@@ -1,7 +1,7 @@
 "use client"
 import NumberFlow, {continuous} from '@number-flow/react'
 import {Card} from "@/app/components/ui/Card"
-import {motion} from "motion/react";
+import {m} from "motion/react";
 import {useEffect, useState} from "react";
 import AnimatedHeader from "@/app/components/ui/animated-header";
 import {contactMethods} from "@/app/constants";
@@ -35,7 +35,7 @@ export default function ContactSection() {
             </div>
 
 
-            <motion.div
+            <m.div
                 transition={{duration: 0.3, ease: 'linear'}}
                 className="flex flex-wrap overflow-hidden  items-center justify-center max-w-6xl  mt-[4rem] gap-6 mt-8">
                 {contactMethods.map((method, i) => (
@@ -76,10 +76,10 @@ export default function ContactSection() {
                     </Card>
                 </div>
                 ))}
-            </motion.div>
+            </m.div>
 
 
-            <motion.div
+            <m.div
 
                 initial={{y: '100%'}}
                 animate={{y: 0}}
@@ -123,18 +123,18 @@ export default function ContactSection() {
                         <div className="text-center overflow-hidden">
                             <h3 className="text-3xl z-15  font-bold text-purple-500 overflow-hidden mb-1">
                                 GMT
-                                <motion.div
+                                <m.div
                                     initial={{x: '100%'}}
                                     animate={{x: 0}}
                                     transition={{duration: 0.6, delay: 0.3, type: 'spring'}}
                                     className='inline-flex'>+1
-                                </motion.div>
+                                </m.div>
                             </h3>
                             <div className="text-sm text-gray-400">Time Zone</div>
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </m.div>
         </div>
 
 

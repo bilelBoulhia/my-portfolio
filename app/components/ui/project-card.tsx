@@ -2,7 +2,7 @@ import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { FaGithub } from "react-icons/fa"
-import { motion } from "motion/react"
+import { m } from "motion/react"
 import { useMediaQuery } from "usehooks-ts"
 
 interface ProjectCardContent {
@@ -25,8 +25,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) 
     const phone = useMediaQuery("(min-width: 768px)")
     return (
         <div className="flex justify-center  items-center py-10">
-            <motion.div className="relative backdrop-filter w-[320px] sm:w-[400px] md:w-[700px] shadow-4xl rounded-xl overflow-hidden">
-                <motion.div
+            <m.div className="relative backdrop-filter w-[320px] sm:w-[400px] md:w-[700px] shadow-4xl rounded-xl overflow-hidden">
+                <m.div
                     initial={{ x: 0 }}
                     animate={{ x: "100%" }}
                     viewport={{ once: true }}
@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) 
                     className="absolute w-[50%] bg-black p-15 hidden md:inline inset-0"
                 >
                     <Image src={ProjectCardContent.imageUrl || ""} alt="Project" layout="fill" objectFit="cover" />
-                </motion.div>
+                </m.div>
                 <div className="relative z-10 h-full flex flex-col-reverse items-center md:items-stretch   md:flex-row ">
                     <div className="relative z-10  p-4 flex  w-full  md:w-[50%] flex-col bg-gray-800/30 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
                         <div className="flex items-center justify-between mb-2">
@@ -61,7 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) 
                         </div>
                     </div>
 
-                    <motion.div
+                    <m.div
                         initial={{ width: phone ? 0 : "100%" }}
                         animate={{ width: phone ? "50%" : "100%" }}
                         viewport={{ once: true }}
@@ -73,9 +73,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent, index }) 
                                 <Image src={ProjectCardContent.imageUrl || ""} alt="Project" layout="fill" objectFit="cover " />
                             </div>
                         </Link>
-                    </motion.div>
+                    </m.div>
                 </div>
-            </motion.div>
+            </m.div>
         </div>
     )
 }
@@ -88,12 +88,12 @@ interface ProjectCardPhoneProps {
 const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent }) => {
     return (
         <div className="flex justify-center items-center py-10">
-            <motion.div
+            <m.div
                 className="relative backdrop-filter shadow-4xl rounded-xl overflow-hidden"
                 transition={{ type: "spring", stiffness: 300 }}
             >
                 <div className="relative z-10 gap-10 m-5 h-full flex justify-center items-center  flex-col-reverse md:flex-row">
-                    <motion.div
+                    <m.div
                         className="relative z-10 overflow-hidden p-4 flex md:w-[50%]  flex-col justify-center"
                         initial={{ x: -20 }}
                         animate={{ x: 0 }}
@@ -102,19 +102,19 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                         <div className="flex items-center  justify-between mb-2">
                             <h2 className="text-xl font-semibold text-white">{ProjectCardContent.title}</h2>
                             <Link href={ProjectCardContent.githubUrl} target="_blank">
-                                <motion.div
+                                <m.div
                                     className="overflow-hidden"
                                     animate={{ scale: 1.2, rotate: 360 }}
                                     transition={{ duration: 0.5 }}
                                 >
                                     <FaGithub className="text-gray-400 cursor-pointer hover:text-gray-500" />
-                                </motion.div>
+                                </m.div>
                             </Link>
                         </div>
 
                         <div className="flex justify-start overflow-hidden items-center flex-wrap">
                             {ProjectCardContent.technologies.map((techstack, f) => (
-                                <motion.div
+                                <m.div
                                     key={f}
                                     className="flex items-center text-gray-400 px-3 text-xs py-1 border border-neutral-800 rounded-full mr-2 mb-2"
                                     initial={{ y: "150%" }}
@@ -130,23 +130,23 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                                         style={{ backgroundColor: ProjectCardContent.techColors[f % ProjectCardContent.techColors.length] }}
                                     ></div>
                                     {techstack}
-                                </motion.div>
+                                </m.div>
                             ))}
                         </div>
 
                         <div className="mt-3 text-left">
                             <p className="text-gray-300 mb-3">{ProjectCardContent.description}</p>
                         </div>
-                    </motion.div>
+                    </m.div>
 
-                    <motion.div
+                    <m.div
                         className="w-[50%] overflow-hidden z-50"
                         initial={{ x: 20 }}
                         animate={{ x: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
-                            <motion.div
+                            <m.div
                                 className="relative h-[40vh] sm:h-[65vh] overflow-hidden"
                                 transition={{ type: "spring", stiffness: 300 }}
                             >
@@ -156,11 +156,11 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                                     layout="fill"
                                     objectFit="contain"
                                 />
-                            </motion.div>
+                            </m.div>
                         </Link>
-                    </motion.div>
+                    </m.div>
                 </div>
-            </motion.div>
+            </m.div>
         </div>
     )
 }
@@ -168,7 +168,7 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
 const ProjectCardDefault: React.FC<ProjectCardProps> = ({ ProjectCardContent }) => {
     return (
         <div className="flex justify-center   items-center py-10">
-            <motion.div className="relative   backdrop-filter w-[320px] sm:w-[350px] shadow-4xl rounded-xl overflow-hidden">
+            <m.div className="relative   backdrop-filter w-[320px] sm:w-[350px] shadow-4xl rounded-xl overflow-hidden">
                 <div className="relative z-10 h-full   ">
                     <div className="relative z-10 min-h-[200px]  p-4 flex  flex-col bg-gray-800/30 backdrop-filter backdrop-blur-lg bg-opacity-30 ">
                         <div className="flex items-center justify-between mb-2">
@@ -203,7 +203,7 @@ const ProjectCardDefault: React.FC<ProjectCardProps> = ({ ProjectCardContent }) 
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </m.div>
         </div>
     )
 }

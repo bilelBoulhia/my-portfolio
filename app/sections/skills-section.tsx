@@ -1,6 +1,6 @@
 'use client'
 import TechStackTag from "@/app/components/ui/tech-stack-tag";
-import {motion} from "motion/react";
+import {m} from "motion/react";
 
 import StackIcon from "tech-stack-icons";
 import {TypewriterEffectSmooth} from "@/app/components/ui/TyperWriter";
@@ -36,9 +36,9 @@ const SkillSection = ()=>{
     return (
 
 
-             <motion.div
+             <m.div
                  className='flex-col p-3 py-6 sm:p-0 overflow-hidden md:flex-row text-center md:text-left gap-10 flex  w-full items-center justify-center '>
-            <motion.div
+            <m.div
                 exit={{
                     width:0
                 }}
@@ -46,8 +46,8 @@ const SkillSection = ()=>{
                 className='max-w-xl '>
                 <TypewriterEffectSmooth words={[{text: 'my'}, {text: 'skils'}]}
                                         className='font-bold text-[5rem]'/>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
 
                 exit={{
                     y:500
@@ -56,8 +56,8 @@ const SkillSection = ()=>{
 
                 className='max-w-2xl '>
                 <StackGrid/>
-            </motion.div>
-        </motion.div>
+            </m.div>
+        </m.div>
 
     )
 }
@@ -70,7 +70,7 @@ const StackGrid = () => {
                 <div
                     className='relative overflow-hidden w-[40px]'
                     key={i}>
-                    <motion.div
+                    <m.div
 
                         initial={{
                             x: 0,

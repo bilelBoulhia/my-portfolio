@@ -4,7 +4,7 @@ import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "@/lib/utils"
-import { motion} from "motion/react"
+import { m} from "motion/react"
 
 const Tabs = TabsPrimitive.Root
 
@@ -13,7 +13,7 @@ const TabsList = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 
 >(({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
         exit={{y:'-200%'}}
         transition={{duration:0.1,ease:'linear'}}
     >
@@ -27,7 +27,7 @@ const TabsList = React.forwardRef<
         )}
         {...props}
     />
-    </motion.div>
+    </m.div>
 ))
 TabsList.displayName = TabsPrimitive.List.displayName
 
@@ -51,7 +51,7 @@ const TabsContent = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 >(({ className, ...props }, ref) => (
 
-    <motion.div
+    <m.div
         exit={{x:'-200%'}}
         transition={{duration:0.3,ease:'linear'}}
     >
@@ -63,7 +63,7 @@ const TabsContent = React.forwardRef<
             )}
             {...props}
         />
-    </motion.div>
+    </m.div>
 
 
 ))

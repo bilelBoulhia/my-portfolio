@@ -7,10 +7,10 @@ import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/app/compon
 import {ArrowRight, Calendar} from "lucide-react";
 import {Button} from "@/app/components/ui/button";
 import {CodeSnippet} from "@/app/components/ui/code-snippet";
-import {motion} from "motion/react";
+import {m} from "motion/react";
 import AnimatedHeader from "@/app/components/ui/animated-header";
 import {gists} from "@/app/constants";
-import {useMediaQuery} from "usehooks-ts";
+
 
 
 
@@ -36,7 +36,7 @@ const GistsSection = () => {
                             transition={{duration: 0.4, ease: 'linear'}}
                             className='min-h-[35rem] border border-zinc-800 rounded-xl overflow-hidden   bg-gradient-to-br from-zinc-900 to-zinc-950 shadow-lg transition-all duration-300'>
 
-                            <motion.div
+                            <m.div
 
                                 exit={{x: 700}}
                                 transition={{duration: 0.3, ease: 'linear'}}
@@ -51,7 +51,7 @@ const GistsSection = () => {
                                             {gist.date}
                                         </div>
                                     </div>
-                                    <motion.div
+                                    <m.div
                                         initial={{x: '-150%'}}
                                         animate={{x: 0}}
                                         transition={{duration: 0.5, ease: 'linear'}}
@@ -59,7 +59,7 @@ const GistsSection = () => {
                                         <CardTitle
                                             className="text-xl  line-clamp-1 font-bold text-zinc-100 ">{gist.title}</CardTitle>
 
-                                    </motion.div>
+                                    </m.div>
                                 </CardHeader>
                                 <CardContent
                                     exit={{x: 600}}
@@ -83,12 +83,12 @@ const GistsSection = () => {
 
                                         asChild
                                     >
-                                        <motion.a
+                                        <m.a
                                             initial={{x: -50, scale: 1.05}}
                                             animate={{x: 0, scale: 1}}
                                             transition={{duration: 0.3, ease: 'linear'}}
                                             href={gist.url}>
-                                            Read the full article <motion.span
+                                            Read the full article <m.span
                                             initial={{x: 0}}
                                             animate={{x: 4}}
                                             transition={{
@@ -97,12 +97,12 @@ const GistsSection = () => {
                                                 type: 'spring'
                                             }}>
 
-                                            <ArrowRight className="h-4 w-4"/></motion.span>
-                                        </motion.a>
+                                            <ArrowRight className="h-4 w-4"/></m.span>
+                                        </m.a>
                                     </Button>
 
                                 </CardFooter>
-                            </motion.div>
+                            </m.div>
                         </Card>
 
                     </div>

@@ -1,14 +1,14 @@
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
-import {HTMLMotionProps, motion } from "motion/react"
+import {HTMLMotionProps, m } from "motion/react"
 
 const Card = React.forwardRef<
     HTMLDivElement,
     HTMLMotionProps<"div">
 
 >(({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
         ref={ref}
         className={cn(
             "rounded-xl border bg-card text-card-foreground shadow",
@@ -23,7 +23,7 @@ const CardHeader = React.forwardRef<
     HTMLDivElement,
     HTMLMotionProps<"div">
 >(({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
         ref={ref}
         className={cn("flex flex-col space-y-1.5 p-6", className)}
         {...props}
@@ -35,7 +35,7 @@ const CardTitle = React.forwardRef<
     HTMLDivElement,
     HTMLMotionProps<"div">
 >(({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
         ref={ref}
         className={cn("font-semibold leading-none tracking-tight", className)}
         {...props}
@@ -47,7 +47,7 @@ const CardDescription = React.forwardRef<
     HTMLDivElement,
     HTMLMotionProps<"div">
 >(({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
         ref={ref}
         className={cn("text-sm text-muted-foreground", className)}
         {...props}
@@ -59,7 +59,7 @@ const CardContent = React.forwardRef<
     HTMLDivElement,
     HTMLMotionProps<"div">
 >(({ className, ...props }, ref) => (
-    <motion.div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+    <m.div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ))
 CardContent.displayName = "CardContent"
 
@@ -67,7 +67,7 @@ const CardFooter = React.forwardRef<
     HTMLDivElement,
     HTMLMotionProps<"div">
 >(({ className, ...props }, ref) => (
-    <motion.div
+    <m.div
         ref={ref}
         className={cn("flex items-center p-6 pt-0", className)}
         {...props}

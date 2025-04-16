@@ -1,7 +1,7 @@
 "use client"
 
 
-import {easeInOut, motion} from "motion/react"
+import { m} from "motion/react"
 import {HiDocumentChartBar} from "react-icons/hi2";
 import {useMediaQuery} from "usehooks-ts";
 
@@ -20,7 +20,7 @@ export default function CustomLink({href,
 
 
     return (
-        <motion.div
+        <m.div
 
             initial={{x: '-200%'}}
             animate={{x: 0}}
@@ -46,7 +46,7 @@ export default function CustomLink({href,
                 <div className="bg-gradient-to-tr from-indigo-500 to-purple-700 p-2 rounded-full">
                     <HiDocumentChartBar className="w-4 h-4 text-white"/>
                 </div>
-                <motion.div
+                <m.div
                     initial={{width:0}}
                     animate={{width:'100%'}}
                     transition={{duration:0.3,ease:'linear'}}
@@ -56,8 +56,8 @@ export default function CustomLink({href,
                           {phrase}
                  </span>
 
-                </motion.div>
+                </m.div>
             </a>
-        </motion.div>
+        </m.div>
     )
 }

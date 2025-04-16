@@ -1,15 +1,8 @@
-import OverviewSection from "@/app/sections/overview-section";
-import SkillSection from "@/app/sections/skills-section";
 import {IconBrandGithub, IconFolder, IconHome, IconPhoneCall} from "@tabler/icons-react";
 import {TbWriting} from "react-icons/tb";
 import React from "react";
-import ProjectsSection from "@/app/sections/projects-section";
-import GistsSection from "@/app/sections/gist-section";
-import GitSection from "@/app/sections/git-section";
-import ContactSection from "@/app/sections/contact-section";
 import {BsGithub} from "react-icons/bs";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
-
 import {Mail, Phone} from "lucide-react";
 
 export const links = [
@@ -151,46 +144,28 @@ for (let service of services) {
 export const screens = [
     {
         id: 1,
-        content:
-            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                <div className='min-h-[50vh] w-full '>
-                    <OverviewSection/>
-                </div>
-                <div className='min-h-[30vh] w-full'>
-                    <SkillSection/>
-                </div>
-            </section>
+        content: () => import('@/app/screens/screen-1')
 
     },
     {
         id: 2,
-        content:
-            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                <ProjectsSection/>
-            </section>
+        content: ()=> import('@/app/screens/screen-2')
     }
     ,
     {
         id: 3,
-        content:
-            <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-               <GistsSection/>
-            </section>
+        content: ()=> import('@/app/screens/screen-3')
     },
     {
         id: 4,
-        content:
-            <section className="w-full  flex min-h-screen  gap-10 items-center  justify-evenly   ">
-                <GitSection/>
-            </section>
+        content: ()=> import('@/app/screens/screen-4')
     },
     {
         id: 5,
-        content:
-            <section className="w-full min-h-screen flex  flex-col gap-10 items-center  justify-evenly   ">
-                <ContactSection/>
-            </section>
+        content: ()=> import('@/app/screens/screen-5')
     }
+
+
 ]
 
 

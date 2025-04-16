@@ -1,5 +1,5 @@
 'use client'
-import {easeInOut, motion} from "motion/react";
+import {easeInOut, m} from "motion/react";
 import React from "react";
 import {useMediaQuery} from 'usehooks-ts'
 
@@ -8,11 +8,9 @@ import CustomLink from "@/app/components/ui/custom-link";
 const OverviewSection = () => {
     const phone = useMediaQuery('(min-width: 768px)')
     return (
-        <div
-
-            className='w-full h-full'>
+        <div className='w-full h-full'>
             <div className=' flex p-3 sm:p-0 flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
-                <motion.img
+                <m.img
 
                     initial={{
                         x:phone ? '-150%' : 0,
@@ -40,7 +38,7 @@ const OverviewSection = () => {
                 <div className='flex flex-col   mt-10 justify-start items-start'>
                     <div className='inline-flex  gap-4 text-4xl sm:text-5xl overflow-hidden  font-bold flex-row '>
                         <div className='overflow-hidden  bg-[#0a0a0a]'>
-                            <motion.h1
+                            <m.h1
 
                                 initial={{x: '200%'}}
                                 animate={{x: 0}}
@@ -55,10 +53,10 @@ const OverviewSection = () => {
                                 className='overflow-hidden  '
                             >
                                 Billel
-                            </motion.h1>
+                            </m.h1>
                         </div>
 
-                        <motion.span
+                        <m.span
 
                             initial={{x: '-200%'}}
                             animate={{x: 0}}
@@ -72,13 +70,13 @@ const OverviewSection = () => {
                                 duration: 0.5, delay: 0.25
                             }}
                         > Boulahia
-                        </motion.span>
+                        </m.span>
 
 
                     </div>
 
 
-                    <motion.div
+                    <m.div
 
                         exit={{width: 0}}
                         transition={{
@@ -86,7 +84,7 @@ const OverviewSection = () => {
                         }}
 
                         className='flex overflow-hidden flex-col h-full justify-center  max-w-xl'>
-                        <motion.p
+                        <m.p
                             initial={{y: 250}}
                             animate={{y: 0}}
                             exit={{width: 0}}
@@ -100,12 +98,12 @@ const OverviewSection = () => {
                             and JavaScript frameworks like React and Next.js. i enjoy programming as much as a tech
                             priest enjoys his daily prayer to the machine spirit.
 
-                        </motion.p>
+                        </m.p>
                         <div className=' overflow-hidden'>
                             <CustomLink href={'https://turquoise-cynthie-96.tiiny.site'}/>
                         </div>
 
-                    </motion.div>
+                    </m.div>
                 </div>
             </div>
 
