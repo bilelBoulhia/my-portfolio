@@ -3,14 +3,12 @@ import {easeInOut, motion} from "motion/react";
 import React from "react";
 import {useMediaQuery} from 'usehooks-ts'
 
-const Overview = () => {
+const OverviewSection = () => {
     const phone = useMediaQuery('(min-width: 768px)')
     return (
 
 
         <motion.div
-
-
             exit={{opacity: 0}}
             transition={{delay: 1}}
             className='w-full h-full'>
@@ -116,4 +114,4 @@ const Overview = () => {
     )
 }
 
-export default Overview;
+export default OverviewSection;

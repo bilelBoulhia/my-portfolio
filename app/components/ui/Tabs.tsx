@@ -4,18 +4,18 @@ import * as React from "react"
 import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "@/lib/utils"
-import { motion } from "motion/react"
+import { motion} from "motion/react"
 
 const Tabs = TabsPrimitive.Root
 
 const TabsList = React.forwardRef<
     React.ElementRef<typeof TabsPrimitive.List>,
     React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
+
 >(({ className, ...props }, ref) => (
     <motion.div
-        exit={{y:'-200%',opacity:0}}
+        exit={{y:'-200%'}}
         transition={{duration:0.1,ease:'linear'}}
-
     >
 
 
@@ -51,14 +51,20 @@ const TabsContent = React.forwardRef<
     React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 >(({ className, ...props }, ref) => (
 
+    <motion.div
+        exit={{x:'-200%'}}
+        transition={{duration:0.3,ease:'linear'}}
+    >
         <TabsPrimitive.Content
-        ref={ref}
-        className={cn(
-            "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-            className
-        )}
-        {...props}
+            ref={ref}
+            className={cn(
+                "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                className
+            )}
+            {...props}
         />
+    </motion.div>
+
 
 ))
 TabsContent.displayName = TabsPrimitive.Content.displayName

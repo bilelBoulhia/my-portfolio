@@ -5,6 +5,7 @@ import Websitesgird from "@/app/sections/project sections/websites-grid";
 import MobileGrid from "@/app/sections/project sections/mobile-grid";
 import BackendGrid from "@/app/sections/project sections/beckends-grid";
 import ToolsGrid from "@/app/sections/project sections/Tools-grid";
+import {AnimatePresence} from "motion/react";
 
 const tabs=["Websites","Mobile apps","Backends","Tools"]
 const ProjectSection = () => {
@@ -36,8 +37,7 @@ const ProjectSection = () => {
     };
 
     return (
-        <section className="flex justify-center w-full items-center text-center">
-
+        <section className="flex overflow-hidden justify-center w-full items-center text-center">
 
 
             <Tabs defaultValue="Websites" onValueChange={handleChange}>
@@ -59,9 +59,13 @@ const ProjectSection = () => {
                     key={value}
                     initial={{x: direction === 'left'  ?  '-100%' : '100%'}}
                     animate={{x: 0}}
+
+                    className='overflow-hidden '
                     transition={{duration: 0.5,ease:'linear'}}
                 >
-                    <TabsContent value={value}>{tabcontent()}</TabsContent>
+                    <TabsContent value={value}>
+                        {tabcontent()}
+                    </TabsContent>
                 </motion.div>
 
             </Tabs>

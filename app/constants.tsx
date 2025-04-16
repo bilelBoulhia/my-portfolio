@@ -1,10 +1,13 @@
-import Overview from "@/app/sections/overview";
+import OverviewSection from "@/app/sections/overview-section";
 import SkillSection from "@/app/sections/skills-section";
 import {IconBrandGithub, IconFolder, IconHome, IconPhoneCall} from "@tabler/icons-react";
 import {TbWriting} from "react-icons/tb";
 import React from "react";
 import ProjectsSection from "@/app/sections/projects-section";
-import { motion } from "motion/react";
+import {motion} from "motion/react";
+import GistsSection from "@/app/sections/gist-section";
+import GitSection from "@/app/sections/git-section";
+
 export const links = [
     {
         title: "Home",
@@ -20,7 +23,7 @@ export const links = [
         icon: (
             <IconFolder className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
         ),
-        sectionid:2
+        sectionid: 2
 
     },
     {
@@ -28,7 +31,7 @@ export const links = [
         icon: (
             <TbWriting className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
         ),
-        sectionid:3
+        sectionid: 3
 
     },
     {
@@ -37,18 +40,17 @@ export const links = [
             <IconBrandGithub className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
         ),
 
-        sectionid:4
+        sectionid: 4
     },
     {
         title: "Contact me",
         icon: (
             <IconPhoneCall className="h-full w-full text-neutral-500 dark:text-neutral-300"/>
         ),
-        sectionid:5
+        sectionid: 5
     }
 
 ];
-
 
 
 export const screens = [
@@ -57,7 +59,7 @@ export const screens = [
         content:
             <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
                 <div className='min-h-[50vh] w-full '>
-                    <Overview/>
+                    <OverviewSection/>
                 </div>
                 <div className='min-h-[30vh] w-full'>
                     <SkillSection/>
@@ -77,38 +79,27 @@ export const screens = [
         id: 3,
         content:
             <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-                <motion.div
-                    exit={{y: -500}}
-
-                >
-                    section 3
-                </motion.div>
+               <GistsSection/>
             </section>
     },
     {
         id: 4,
         content:
+            <section className="w-full  flex min-h-screen  gap-10 items-center  justify-evenly   ">
+                <GitSection/>
+            </section>
+    },
+    {
+        id: 5,
+        content:
             <section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
+
                 <motion.div
-                    exit={{y: -500}}
+                    exit={{x: -500}}
 
                 >
-                    section 4
+                    section 5
                 </motion.div>
-            </section>
-},
-{
-id: 5,
-    content
-:
-<section className="w-full flex  flex-col gap-10 items-center  justify-evenly   ">
-
-              <motion.div
-              exit={{x: -500}}
-
-              >
-                  section 5
-              </motion.div>
             </section>
     }
 ]
@@ -164,10 +155,10 @@ export const WebsitesList =
 
     ]
 
-export const ToolsProjects=[
+export const ToolsProjects = [
     {
         title: "Telegram Coin Singaling Bot",
-        projectType:"Bot",
+        projectType: "Bot",
         description: "a Bot service that determines the best coins with liquidity and send signals of the selected coins",
         technologies: ['Asp net', 'JWT', 'Sql'],
         techColors: ['#102475', '#1074b3', '#bf3314'],
@@ -178,7 +169,7 @@ export const ToolsProjects=[
         title: "Nsfw poop remover ",
         description: "an extension that removes +18 popup without having to open an account",
         technologies: ['Google'],
-        projectType:"Extension",
+        projectType: "Extension",
         techColors: ['#ae4b34'],
         projectUrl: "https://github.com/bilelBoulhia/reddit-nsfw-popup-remover",
         githubUrl: "https://github.com/bilelBoulhia/reddit-nsfw-popup-remover"
@@ -186,17 +177,17 @@ export const ToolsProjects=[
     {
         title: "mass Exit from Facebook",
         description: "a selenium bot that auto exit all groups since there is no feature for that in the app",
-        projectType:"automated script",
-        technologies: [ 'Maven', 'Java','Selenium'],
-        techColors: [ '#F52660', '#7dae34','#bf6a14'],
+        projectType: "automated script",
+        technologies: ['Maven', 'Java', 'Selenium'],
+        techColors: ['#F52660', '#7dae34', '#bf6a14'],
         projectUrl: "https://github.com/bilelBoulhia/Mass-Leave-from-facebook--Script",
         githubUrl: "https://github.com/bilelBoulhia/Mass-Leave-from-facebook--Script"
     },
     {
         title: "Html-Pdf converter",
         description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
-        projectType:"CLI app",
-        technologies: ['Maven', 'Pico ClI', ],
+        projectType: "CLI app",
+        technologies: ['Maven', 'Pico ClI',],
         techColors: ['#F52660', '#10b37a'],
         projectUrl: "https://github.com/bilelBoulhia/Convert-Html-to-Pdf",
         githubUrl: "https://github.com/bilelBoulhia/Convert-Html-to-Pdf"
@@ -204,16 +195,16 @@ export const ToolsProjects=[
     {
         title: "start apps from cmd",
         description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
-        projectType:"windows  app",
+        projectType: "windows  app",
         technologies: ['Winform', 'Windows'],
-        techColors: [ '#3d719c','#1450bf'],
+        techColors: ['#3d719c', '#1450bf'],
         projectUrl: "https://github.com/bilelBoulhia/start-apps-from-cmd",
         githubUrl: "https://github.com/bilelBoulhia/start-apps-from-cmd"
     },
 ]
 
 
-export const backendProjects=[
+export const backendProjects = [
     {
         title: "backend of articles app",
         description: "a compete backend with auth and database for an articles app ",
@@ -225,15 +216,15 @@ export const backendProjects=[
     {
         title: "wrt backend",
         description: "a backend that uses websockts for real time data",
-        technologies: ['Asp.net', 'JWT', 'Sql','SignalR'],
-        techColors: ['#102475', '#1074b3', '#bf3314','#5814bf'],
+        technologies: ['Asp.net', 'JWT', 'Sql', 'SignalR'],
+        techColors: ['#102475', '#1074b3', '#bf3314', '#5814bf'],
         projectUrl: "https://github.com/bilelBoulhia/Wrt-backend-server",
         githubUrl: "https://github.com/bilelBoulhia/Wrt-backend-server"
     },
 ]
 
 
-export  const MobilePorjectsList = [
+export const MobilePorjectsList = [
     {
         title: "hi qr code scanner",
         description: "a mobile app for auto checking event visitors on a google appsheet",
