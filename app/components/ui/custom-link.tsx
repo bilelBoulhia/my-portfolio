@@ -3,6 +3,7 @@
 
 import {easeInOut, motion} from "motion/react"
 import {HiDocumentChartBar} from "react-icons/hi2";
+import {useMediaQuery} from "usehooks-ts";
 
 
 interface CustomLinkProps {
@@ -15,7 +16,7 @@ export default function CustomLink({href,
                                       }: CustomLinkProps) {
 
     const phrase = "Download Resume"
-
+    const phone = useMediaQuery('(min-width: 768px)')
 
 
     return (
@@ -23,7 +24,11 @@ export default function CustomLink({href,
 
             initial={{x: '-200%'}}
             animate={{x: 0}}
-            exit={{opacity:0}}
+            exit={{
+                x: phone ? '-200%' : '0',
+                y: phone ? '0%' : '-200%'
+            }}
+
             style={{zIndex: -1}}
             transition={{
                 duration: 0.3,
