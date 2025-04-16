@@ -39,6 +39,8 @@ export default function ContactSection() {
                 transition={{duration: 0.3, ease: 'linear'}}
                 className="flex flex-wrap overflow-hidden  items-center justify-center max-w-6xl  mt-[4rem] gap-6 mt-8">
                 {contactMethods.map((method, i) => (
+                    <div className='overflow-hidden '>
+
                     <Card
                         initial={{y:phone ? (i === 0 ? -200 : -200 * (i) + 0.5) : 0,
                                   x:phone ?  0 : (i === 0 ? -200 : -200 * (i) + 0.5)
@@ -46,12 +48,12 @@ export default function ContactSection() {
                         }}
                         animate={{y: 0,x:0}}
                         exit={{y:phone ? ( i === 0 ? 300 : 300 * (i) + 0.5) : 0,
-                               x:phone ?  0 : ( i === 0 ? 200 : 200 * (i) + 0.5)
+                               x:phone ?  0 : '150%'
                         }}
                         onClick={() => method.islink ? location.href = method.value : ''}
                         transition={{duration:phone ? 0.6 : 0.3, ease: 'linear'}}
                         key={method.id}
-                        className={`group relative ${method.islink && 'cursor-pointer'}  overflow-hidden min-w-[15rem] bg-[#111] border-0`}>
+                        className={`group  relative ${method.islink && 'cursor-pointer'}  overflow-hidden min-w-[15rem] bg-[#111] border-0`}>
                         <div
                             className={`absolute  inset-0 bg-gradient-to-br ${method.color} opacity-20 transition-opacity duration-300`}
                         ></div>
@@ -72,6 +74,7 @@ export default function ContactSection() {
                             <p className="text-gray-300">{method.label}</p>
                         </div>
                     </Card>
+                </div>
                 ))}
             </motion.div>
 

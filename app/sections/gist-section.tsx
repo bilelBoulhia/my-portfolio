@@ -41,8 +41,6 @@ const GistsSection = () => {
                                 exit={{x: 700}}
                                 transition={{duration: 0.3, ease: 'linear'}}
                             >
-
-
                                 <CardHeader
 
                                     className="pb-2 overflow-hidden">
