@@ -14,6 +14,22 @@ const genos = Genos({
 export const metadata: Metadata = {
   title: "bilel boulahia",
   description: "my humble portflio",
+    openGraph: {
+        title: "bilel boulahia",
+        description: "my humble portfolio",
+        url: "https://my-portfolio-two-blue-10.vercel.app/",
+        siteName: "bilel boulahia",
+        images: [
+            {
+                url: "https://cdn.dribbble.com/userupload/17904222/file/original-223be05790512966cb3145797aed562c.jpeg?resize=752x&vertical=center",
+                width: 1200,
+                height: 630,
+                alt: "bilel boulahia portfolio preview",
+            },
+        ],
+
+    },
+
 };
 export default function RootLayout({
   children,
