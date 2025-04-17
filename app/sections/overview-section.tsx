@@ -1,6 +1,6 @@
 'use client'
-import {easeInOut, m} from "motion/react";
-import React, {useMemo} from "react";
+import { m} from "motion/react";
+import React from "react";
 import {useMediaQuery} from 'usehooks-ts'
 
 import CustomLink from "@/app/components/ui/custom-link";
