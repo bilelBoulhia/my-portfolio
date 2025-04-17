@@ -17,7 +17,7 @@ const techstack=[
     <TechStackTag stack={<StackIcon name="csharp" />} />,
     <TechStackTag stack={<StackIcon name="docker" />} />,
     <TechStackTag stack={<StackIcon name="firebase" />} />,
-    <TechStackTag stack={<StackIcon name="framer" />} />,
+    <TechStackTag stack={<StackIcon className='bg-white rounded-full p-1' name="framer" />} />,
     <TechStackTag stack={<StackIcon name="github" />} />,
     <TechStackTag stack={<StackIcon name="gsap" />} />,
     <TechStackTag stack={<StackIcon name="java" />} />,
@@ -25,7 +25,7 @@ const techstack=[
     <TechStackTag stack={<StackIcon name="java" />} />,
     <TechStackTag stack={<StackIcon name="nodejs" />} />,
     <TechStackTag stack={<StackIcon name="npm" />} />,
-    <TechStackTag stack={<StackIcon name="render" />} />,
+    <TechStackTag stack={<StackIcon className='bg-white rounded-full p-1' name="render" />} />,
     <TechStackTag stack={<StackIcon name="tailwindcss" />} />,
     <TechStackTag stack={<StackIcon name="vitejs" />} />,
 
@@ -44,8 +44,8 @@ const SkillSection = ()=>{
                 }}
                 transition={{ease:'easeInOut',duration:'0.5'}}
                 className='max-w-xl '>
-                <TypewriterEffectSmooth words={[{text: 'my'}, {text: 'skils'}]}
-                                        className='font-bold text-[5rem]'/>
+                <TypewriterEffectSmooth words={[{text: 'my'}, {text: 'skills'}]}
+                                        className='font-bold  text-[5rem]'/>
             </m.div>
             <m.div
 

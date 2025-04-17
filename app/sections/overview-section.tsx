@@ -39,11 +39,11 @@ const OverviewSection = () => {
                 />
                 <div className='flex flex-col   mt-10 justify-start items-start'>
                     <div className='inline-flex  gap-4 text-4xl sm:text-5xl overflow-hidden  font-bold flex-row '>
-                        <div className="overflow-hidden bg-[#0a0a0a]">
+                        <div className="overflow-hidden w-full bg-[#0a0a0a] ">
                             <m.h1
-                                initial={{x: "100%"}}
+                                initial={{x: "130%"}}
                                 animate={{x: 0}}
-                                exit={{x: "110%"}}
+                                exit={{x: "130%"}}
                                 transition={{
                                     duration: 0.7,
                                     ease: [0.22, 1, 0.36, 1],
@@ -51,17 +51,20 @@ const OverviewSection = () => {
                                     damping: 20,
                                     stiffness: 100,
                                 }}
-                                className="overflow-hidden"
+
                             >
                                 billel
                             </m.h1>
                         </div>
 
+                        <div style={{zIndex: -1}}
+                             className='absolute overflow-hidden inset-0 w-[20%] bg-[#0a0a0a] h-full '/>
+
                         <m.span
-                            initial={{x: "-100%"}}
+                            initial={{x: "-130%"}}
                             animate={{x: 0}}
-                            exit={{x: "-150%"}}
-                            style={{zIndex: -1}}
+                            exit={{x: "-130%"}}
+                            style={{zIndex: -2}}
                             transition={{
                                 duration: 0.7,
                                 delay: 0.15,
@@ -70,36 +73,37 @@ const OverviewSection = () => {
                                 damping: 22,
                                 stiffness: 90,
                             }}
+
                         >
-                          boulahia
+                            boulahia
                         </m.span>
 
                     </div>
-                        <motion.div
+                    <motion.div
 
+                        exit={{width: 0}}
+                        transition={{
+                            delay: 0.5,
+                        }}
+
+                        className='flex overflow-hidden flex-col h-full justify-center  max-w-xl'>
+                        <motion.p
+                            initial={{y: 250}}
+                            animate={{y: 0}}
                             exit={{width: 0}}
                             transition={{
-                                delay: 0.5,
+                                delay: 0.8, duration: 0.5
                             }}
 
-                            className='flex overflow-hidden flex-col h-full justify-center  max-w-xl'>
-                            <motion.p
-                                initial={{y: 250}}
-                                animate={{y: 0}}
-                                exit={{width: 0}}
-                                transition={{
-                                    delay: 0.8, duration: 0.5
-                                }}
+                            className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,
+                            I am a Full Stack Software Developer with a focus on building web and mobile
+                            applications
+                            using .NET, Java,
+                            and JavaScript frameworks like React and Next.js. i enjoy programming as much as a tech
+                            priest enjoys his daily prayer to the machine spirit.
 
-                                className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,
-                                I am a Full Stack Software Developer with a focus on building web and mobile
-                                applications
-                                using .NET, Java,
-                                and JavaScript frameworks like React and Next.js. i enjoy programming as much as a tech
-                                priest enjoys his daily prayer to the machine spirit.
-
-                            </motion.p>
-                            <div className=' overflow-hidden'>
+                        </motion.p>
+                        <div className=' overflow-hidden'>
                                 <CustomLink href={'https://turquoise-cynthie-96.tiiny.site'}/>
                             </div>
 
