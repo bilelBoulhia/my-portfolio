@@ -56,7 +56,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
                     <div className="  w-full md:w-[50%] z-50">
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
                             <div className="relative h-52 overflow-hidden">
-                                <Image src={ProjectCardContent.imageUrl || ""} alt="Project" layout="fill" objectFit="cover " />
+                                <Image
+                                    src={ProjectCardContent.imageUrl || "/placeholder.svg"}
+                                    alt="Project"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    priority
+                                />
                             </div>
                         </Link>
                     </div>
@@ -139,7 +145,7 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                                     src={ProjectCardContent.imageUrl || "/placeholder.svg"}
                                     alt="Project"
                                     layout="fill"
-
+                                    priority
                                     objectFit="contain"
                                 />
                             </div>

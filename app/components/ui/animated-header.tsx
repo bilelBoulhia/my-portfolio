@@ -29,6 +29,7 @@ const AnimatedHeader: React.FC<Props> = ({ firstword, className, secondword, ...
                         damping: 20,
                         stiffness: 100,
                     }}
+                    className='will-change-transform '
 
                 >
                     {firstword}
@@ -50,6 +51,7 @@ const AnimatedHeader: React.FC<Props> = ({ firstword, className, secondword, ...
                         damping: 22,
                         stiffness: 90,
                     }}
+                    className='will-change-transform '
 
                 >
                     {secondword}

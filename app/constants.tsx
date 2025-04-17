@@ -4,6 +4,8 @@ import React from "react";
 import {BsGithub} from "react-icons/bs";
 import {InstagramLogoIcon} from "@radix-ui/react-icons";
 import {Mail, Phone} from "lucide-react";
+import TechStackTag from "@/app/components/ui/tech-stack-tag";
+import StackIcon from "tech-stack-icons";
 
 export const links = [
     {
@@ -140,6 +142,31 @@ for (let service of services) {
         url: "https://gist.github.com/bilelBoulhia/efe15d785a53417b389f49eab91c562a",
 
     }]
+
+export const techstack=[
+    <TechStackTag stack={<StackIcon name="nextjs2" />} /> ,
+    <TechStackTag stack={<StackIcon name="typescript" />} />,
+    <TechStackTag stack={<StackIcon name="reactjs" />} />,
+    <TechStackTag stack={<StackIcon name="android" />} />,
+    <TechStackTag stack={<StackIcon name="appwrite" />} />,
+    <TechStackTag stack={<StackIcon name="chromium" />} />,
+    <TechStackTag stack={<StackIcon name="csharp" />} />,
+    <TechStackTag stack={<StackIcon name="docker" />} />,
+    <TechStackTag stack={<StackIcon name="firebase" />} />,
+    <TechStackTag stack={<StackIcon className='bg-white rounded-full p-1' name="framer" />} />,
+    <TechStackTag stack={<StackIcon name="github" />} />,
+    <TechStackTag stack={<StackIcon name="gsap" />} />,
+    <TechStackTag stack={<StackIcon name="java" />} />,
+    <TechStackTag stack={<StackIcon name="mysql" />} />,
+    <TechStackTag stack={<StackIcon name="java" />} />,
+    <TechStackTag stack={<StackIcon name="nodejs" />} />,
+    <TechStackTag stack={<StackIcon name="npm" />} />,
+    <TechStackTag stack={<StackIcon className='bg-white rounded-full p-1' name="render" />} />,
+    <TechStackTag stack={<StackIcon name="tailwindcss" />} />,
+    <TechStackTag stack={<StackIcon name="vitejs" />} />,
+
+]
+
 
 export const screens = [
     {

@@ -39,8 +39,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <LazyMotion features={domAnimation} >
-      <body className={`${genos.variable}  overflow-x-hidden antialiased`}>
+    <head>
+        <link rel="preload" as="image" href="https://i.ibb.co/KxxWkVDv/pexels-italo-melo-881954-2379004-1-1-1.webp"/>
+        <title>portfolio</title>
+    </head>
+    <LazyMotion features={domAnimation}>
+        <body className={`${genos.variable}  overflow-x-hidden antialiased`}>
        <NoiseEffect/>
        {children}
        <Analytics mode="production" />;

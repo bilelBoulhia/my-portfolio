@@ -11,7 +11,7 @@ const OverviewSection = () => {
         <div
 
             className='w-full h-full'>
-            <div className=' flex p-3 sm:p-0 flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
+            <div className='flex p-3 sm:p-0 flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
                 <motion.img
 
                     initial={{
@@ -22,7 +22,7 @@ const OverviewSection = () => {
 
 
 
-                    className='w-[15rem] z-2  self-center rounded-2xl h-auto'
+                    className='w-[15rem] will-change-transform z-2  self-center rounded-2xl h-auto'
                     src='https://i.ibb.co/KxxWkVDv/pexels-italo-melo-881954-2379004-1-1-1.webp'
                     exit={{
                         x: phone ? '-200%' : '0',
@@ -37,7 +37,7 @@ const OverviewSection = () => {
                     }}
                     alt={'s'}
                 />
-                <div className='flex flex-col   mt-10 justify-start items-start'>
+                <div className='flex flex-col  mt-10 justify-start items-start'>
                     <div className='inline-flex  gap-4 text-4xl sm:text-5xl overflow-hidden  font-bold flex-row '>
                         <div className="overflow-hidden w-full bg-[#0a0a0a] ">
                             <m.h1
@@ -51,7 +51,7 @@ const OverviewSection = () => {
                                     damping: 20,
                                     stiffness: 100,
                                 }}
-
+                                className='will-change-transform '
                             >
                                 billel
                             </m.h1>
@@ -73,6 +73,7 @@ const OverviewSection = () => {
                                 damping: 22,
                                 stiffness: 90,
                             }}
+                            className='will-change-transform'
 
                         >
                             boulahia
@@ -86,7 +87,7 @@ const OverviewSection = () => {
                             delay: 0.5,
                         }}
 
-                        className='flex overflow-hidden flex-col h-full justify-center  max-w-xl'>
+                        className='flex  overflow-hidden flex-col h-full justify-center  max-w-xl'>
                         <motion.p
                             initial={{y: 250}}
                             animate={{y: 0}}
