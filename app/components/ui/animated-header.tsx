@@ -23,7 +23,7 @@ const AnimatedHeader: React.FC<Props> = ({ firstword, className, secondword, ...
                     animate={{ x: 0 }}
                     exit={{x: "130%"}}
                     transition={{
-                        duration: 0.7,
+                        duration: 0.4,
                         ease: [0.22, 1, 0.36, 1],
                         type: "spring",
                         damping: 20,
@@ -44,14 +44,13 @@ const AnimatedHeader: React.FC<Props> = ({ firstword, className, secondword, ...
                     exit={{x: "-130%"}}
                     style={{zIndex: -2}}
                     transition={{
-                        duration: 0.7,
+                        duration: 0.4,
                         delay: 0.15,
                         ease: [0.22, 1, 0.36, 1],
                         type: "spring",
                         damping: 22,
                         stiffness: 90,
-                    }}
-                    className='will-change-transform '
+                    }}   className='will-change-transform '
 
                 >
                     {secondword}

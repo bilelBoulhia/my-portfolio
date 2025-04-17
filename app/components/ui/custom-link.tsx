@@ -20,23 +20,7 @@ export default function CustomLink({href,
 
 
     return (
-        <m.div
-
-            initial={{x: '-200%'}}
-            animate={{x: 0}}
-            exit={{
-                x: phone ? '-200%' : '0',
-                y: phone ? '0%' : '-200%'
-            }}
-
-            style={{zIndex: -1}}
-            transition={{
-                duration: 0.3,
-                delay:1.5
-            }}
-            className="inline-flex mt-5 items-center space-x-3  bg-neutral-800 rounded-full"
-
-        >
+        <div className="inline-flex mt-5 items-center space-x-3  bg-neutral-800 rounded-full">
             <a
                 href={href}
                 target="_blank"
@@ -46,18 +30,16 @@ export default function CustomLink({href,
                 <div className="bg-gradient-to-tr from-indigo-500 to-purple-700 p-2 rounded-full">
                     <HiDocumentChartBar className="w-4 h-4 text-white"/>
                 </div>
-                <m.div
-                    initial={{width:0}}
-                    animate={{width:'100%'}}
-                    transition={{duration:0.3,ease:'linear'}}
+                <div
+
                     className="overflow-hidden ml-2"
                 >
                     <span className="block font-bold mr-2 text-sm text-white whitespace-nowrap">
                           {phrase}
                  </span>
 
-                </m.div>
+                </div>
             </a>
-        </m.div>
+        </div>
     )
 }
