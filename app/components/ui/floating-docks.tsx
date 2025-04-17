@@ -30,7 +30,7 @@ export const FloatingDock = ({
         >
             <motion.button
                 onClick={toggleNav}
-                className="relative flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 shadow-lg hover:shadow-xl transition-all z-10"
+                className="relative flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 shadow-lg  z-10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={false}
@@ -45,27 +45,20 @@ export const FloatingDock = ({
                 />
 
                 <motion.div
-                    className="flex items-center justify-center relative z-10"
+                    className="flex items-center    justify-center relative z-10"
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ type: "spring", stiffness: 260, damping: 20 }}
                 >
-                    <motion.div className="w-6 h-6 flex  items-center justify-center" initial={false}>
+                    <motion.div className="w-6 h-6 gap-14 flex  items-center justify-center" initial={false}>
                         <motion.span
-                            className="absolute block h-0.5 w-4 bg-white rounded-full"
+                            className="absolute block  h-0.5 w-4 bg-white rounded-full"
                             animate={{
                                 rotate: isOpen ? 45 : 0,
                                 translateY: isOpen ? 0 : -2,
                             }}
                             transition={{ type: "spring", stiffness: 260, damping: 20 }}
                         />
-                        <motion.span
-                            className="absolute block h-0.5 w-4 bg-white rounded-full"
-                            animate={{
-                                opacity: isOpen ? 0 : 1,
-                                width: isOpen ? 0 : 16,
-                            }}
-                            transition={{ duration: 0.2 }}
-                        />
+
                         <motion.span
                             className="absolute block h-0.5 w-4 bg-white rounded-full"
                             animate={{
