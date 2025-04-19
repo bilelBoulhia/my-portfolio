@@ -158,7 +158,7 @@ export const techstack=[
     <TechStackTag stack={<StackIcon name="gsap" />} />,
     <TechStackTag stack={<StackIcon name="java" />} />,
     <TechStackTag stack={<StackIcon name="mysql" />} />,
-    <TechStackTag stack={<StackIcon name="java" />} />,
+    <TechStackTag stack={<StackIcon name="Net" />} />,
     <TechStackTag stack={<StackIcon name="nodejs" />} />,
     <TechStackTag stack={<StackIcon name="npm" />} />,
     <TechStackTag stack={<StackIcon className='bg-white rounded-full p-1' name="render" />} />,
@@ -257,7 +257,7 @@ export const ToolsProjects = [
         githubUrl: "https://github.com/bilelBoulhia/telegram-bot-for-trade-spoting"
     },
     {
-        title: "Nsfw poop remover ",
+        title: "reddit popup remover",
         description: "an extension that removes +18 popup without having to open an account",
         technologies: ['Google'],
         projectType: "Extension",
