@@ -3,18 +3,18 @@ import { cn } from "@/lib/utils"
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/Card"
 interface CodeSnippetProps {
     code: string
-    language?: string
-    title?: string
+    language: string
+
     className?: string
 }
-export function CodeSnippet({ code, language, title, className }: CodeSnippetProps) {
+export function CodeSnippet({ code, language, className }: CodeSnippetProps) {
 
     return (
         <div className='overflow-hidden flex justify-center  '>
             <Card className={cn("overflow-hidden w-[80vw] border-neutral-800 bg-black", className)}>
             <CardHeader className="flex flex-row items-center justify-between bg-neutral-900 py-2 px-4 border-b border-neutral-800">
                 <CardTitle className="text-sm font-medium text-neutral-300">
-                    {title || (language ? `${language} code` : "Code snippet")}
+                    {(language)}
                 </CardTitle>
             </CardHeader>
             <CardContent className="p-0">

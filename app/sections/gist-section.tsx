@@ -67,7 +67,7 @@ const GistsSection = () => {
 
                                 ><p className="text-zinc-400 mb-5 line-clamp-3 text-sm">{gist.excerpt}</p>
                                     <CodeSnippet
-                                        title="sending auto emails"
+
                                         language="javascript"
                                         code={gist.code}
                                     />
