@@ -2,8 +2,6 @@
 import { m} from "motion/react";
 import React from "react";
 import {useMediaQuery} from 'usehooks-ts'
-
-import {motion} from "framer-motion";
 import {Download} from "lucide-react";
 
 
@@ -118,10 +116,10 @@ const OverviewSection = () => {
                                         whileTap={{scale: 0.97}}
                                     >
                                         <span
-                                            className="flex items-center">
+                                            className="flex whitespace-nowrap items-center">
 
                                             <Download className="h-4 w-4 mr-1"/>
-                                            Download Resume
+                                            read Resume
 
                                         </span>
                                     </m.a>
