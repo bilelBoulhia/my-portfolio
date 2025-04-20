@@ -3,7 +3,8 @@ import { m} from "motion/react";
 import React from "react";
 import {useMediaQuery} from 'usehooks-ts'
 
-import CustomLink from "@/app/components/ui/custom-link";
+import {motion} from "framer-motion";
+import {Download} from "lucide-react";
 
 
 const OverviewSection = () => {
@@ -104,17 +105,39 @@ const OverviewSection = () => {
                                 delay: 0.8, duration: 0.3
                             }}
                             className='relative overflow-hidden'>
-                                <CustomLink href={'https://turquoise-cynthie-96.tiiny.site'}/>
-                        </m.div>
+
+                            <div className="relative  float-start   pt-4">
+
+                                    <m.a
+                                        href="https://drive.google.com/file/d/1JTYb8ozg0XouJKv7Pslhjoh_XA_b7Lqf/view?usp=sharing"
+                                        download="Billel_Boulahia_Resume.pdf"
+
+
+                                        className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 text-white py-2.5 px-4 rounded-lg font-medium text-sm"
+                                        whileHover={{scale: 1.03}}
+                                        whileTap={{scale: 0.97}}
+                                    >
+                                        <span
+                                            className="flex items-center">
+
+                                            <Download className="h-4 w-4 mr-1"/>
+                                            Download Resume
+
+                                        </span>
+                                    </m.a>
+                                </div>
+
 
                         </m.div>
-                    </div>
+
+                    </m.div>
                 </div>
-
             </div>
 
+        </div>
 
-            )
-            }
 
-            export default OverviewSection;
+    )
+}
+
+export default OverviewSection;
