@@ -1,5 +1,4 @@
 "use client"
-import NumberFlow, {continuous} from '@number-flow/react'
 import {Card} from "@/app/components/ui/Card"
 import {m} from "motion/react";
 import {useEffect, useState} from "react";
@@ -10,19 +9,7 @@ import {useMediaQuery} from "usehooks-ts";
 export default function ContactSection() {
 
     const phone = useMediaQuery('(min-width: 526px)')
-    const [value, setValue] = useState(0)
-    useEffect(() => {
-        const inte = setInterval(() => {
-            setValue((prev) => {
-                if (prev >= 12) {
-                    clearInterval(inte)
-                    return prev
-                }
-                return prev + 1
-            })
-        }, 60)
-        return () => clearInterval(inte)
-    }, [])
+
     return (
 
 
@@ -101,34 +88,14 @@ export default function ContactSection() {
                     <div className="inline-flex justify-evenly items-center  gap-6">
                         <div className="text-center">
                             <div className="text-3xl font-bold text-blue-500 mb-1">
-                                <NumberFlow
-                                    locales="en-US"
-                                    willChange
-                                    value={value}
-                                    isolate
-                                    plugins={[continuous]}
-                                    opacityTiming={{
-                                        duration: 250,
-                                        easing: 'ease-out'
-                                    }}
-                                    transformTiming={{
-                                        easing: `linear(0, 0.0033 0.8%, 0.0263 2.39%, 0.0896 4.77%, 0.4676 15.12%, 0.5688, 0.6553, 0.7274, 0.7862, 0.8336 31.04%, 0.8793, 0.9132 38.99%, 0.9421 43.77%, 0.9642 49.34%, 0.9796 55.71%, 0.9893 62.87%, 0.9952 71.62%, 0.9983 82.76%, 0.9996 99.47%)`,
-                                        duration: 500
-                                    }}
 
-                                />
-                                <span>h</span></div>
+                                12h</div>
                             <div className="text-sm text-gray-400">Response Time</div>
                         </div>
                         <div className="text-center overflow-hidden">
                             <h3 className="text-3xl z-15  font-bold text-purple-500 overflow-hidden mb-1">
-                                GMT
-                                <m.div
-                                    initial={{x: '100%'}}
-                                    animate={{x: 0}}
-                                    transition={{duration: 0.6, delay: 0.3, type: 'spring'}}
-                                    className='inline-flex'>+1
-                                </m.div>
+                                GMT+1
+
                             </h3>
                             <div className="text-sm text-gray-400">Time Zone</div>
                         </div>
