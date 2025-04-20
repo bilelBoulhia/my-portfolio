@@ -88,7 +88,7 @@ const GistsSection = () => {
                                             animate={{x: 0, scale: 1}}
                                             transition={{duration: 0.3, ease: 'linear'}}
                                             href={gist.url}>
-                                            Read the full article <m.span
+                                            Read the gist here <m.span
                                             initial={{x: 0}}
                                             animate={{x: 4}}
                                             transition={{
