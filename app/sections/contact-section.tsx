@@ -1,7 +1,6 @@
 "use client"
 import {Card} from "@/app/components/ui/Card"
 import {m} from "motion/react";
-import {useEffect, useState} from "react";
 import AnimatedHeader from "@/app/components/ui/animated-header";
 import {contactMethods} from "@/app/constants";
 import {useMediaQuery} from "usehooks-ts";

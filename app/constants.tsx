@@ -86,15 +86,7 @@ export const contactMethods = [
         islink:true
 
     },
-    // {
-    //     id: "facebook",
-    //     icon: BsFacebook,
-    //     label: "facebook.com/bi.lel0509/",
-    //     value: "https://www.facebook.com/bi.lel0509/",
-    //     color: "from-blue-600 to-blue-800",
-    //     islink:true
-    //
-    // },
+
 ]
 
 
