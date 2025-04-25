@@ -41,12 +41,52 @@ export default function RootLayout({
     <html lang="en">
     <head>
         <link rel="preload" as="image" href="https://i.ibb.co/KxxWkVDv/pexels-italo-melo-881954-2379004-1-1-1.webp"/>
+        <link
+            rel="preload"
+            href="https://i.ibb.co/ZzfmGGQv/Capture-1.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/qMtMwHVb/photo-6035050906766133098-w-1.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/xd3SSX0/photo-6035050906766133095-w-1.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/1GsGvc1D/Ix6aqs-QLhi-Zb.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/1Jsc0FJQ/image-1.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/1GsGvc1D/Ix6aqs-QLhi-Zb.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/8LRVmCD7/Untitled-1-1.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/B2JVWVjY/Untitled-1.png"
+            as="image"
+        />
         <title>portfolio</title>
     </head>
     <LazyMotion features={domAnimation}>
         <body className={`${genos.variable}  overflow-x-hidden antialiased`}>
-       <NoiseEffect/>
-       {children}
+        <NoiseEffect/>
+        {children}
        <Analytics mode="production" />;
       </body>
     </LazyMotion>
