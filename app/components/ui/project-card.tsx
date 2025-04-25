@@ -61,6 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
                                     alt="Project"
                                     layout="fill"
                                     objectFit="cover"
+                                    loading="eager"
                                     priority
                                 />
                             </div>
@@ -147,6 +148,7 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                                     layout="fill"
                                     priority
                                     objectFit="contain"
+                                    loading="eager"
                                 />
                             </div>
                         </Link>
