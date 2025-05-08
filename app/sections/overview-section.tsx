@@ -88,12 +88,9 @@ const OverviewSection = () => {
                                 delay: 0.8, duration: 0.3
                             }}
 
-                            className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,
-                            I am a Full Stack Software Developer with a focus on building web and mobile
-                            applications
-                            using .NET, Java,
-                            and JavaScript frameworks like React and Next.js. i enjoy programming as much as a tech
-                            priest enjoys his daily prayer to the machine spirit.
+                            className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,I am a Full Stack Software Developer specializing in building web and mobile applications. My primary tech stack includes .NET C# for backend development
+                            and modern JavaScript frameworks such as React and Next.js for creating dynamic user interfaces. I have a strong passion for coding and a 
+                            problem-solving mindset, I take pride in delivering maintainable code and continuously strive to improve both my technical skills and the products I build.
 
                         </m.p>
                         <m.div
