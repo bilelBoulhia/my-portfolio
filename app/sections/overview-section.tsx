@@ -89,8 +89,8 @@ const OverviewSection = () => {
                             }}
 
                             className=' text-xl  sm:text-2xl  font-semibold'>hey there👋,I am a Full Stack Software Developer specializing in building web and mobile applications. My primary tech stack includes .NET C# for backend development
-                            and modern JavaScript frameworks such as React and Next.js for creating dynamic user interfaces. I have a strong passion for coding and a 
-                            problem-solving mindset, I take pride in delivering maintainable code and continuously strive to improve both my technical skills and the products I build.
+                            and modern JavaScript frameworks such as React and Next.js for creating user interfaces.
+
 
                         </m.p>
                         <m.div
