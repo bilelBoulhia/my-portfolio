@@ -23,11 +23,11 @@ const ProjectSection = () => {
     const tabcontent = () => {
         switch (value) {
             case tabs[0]:
-                return <Websitesgird />;
+                return <Websitesgird  />;
             case tabs[1]:
-                return <MobileGrid/>;
+                return <MobileGrid />;
             case tabs[2]:
-                return <BackendGrid/>;
+                return <BackendGrid />;
             case tabs[3]:
                 return <ToolsGrid/>;
 

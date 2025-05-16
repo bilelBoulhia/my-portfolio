@@ -55,22 +55,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
                     </div>
 
                     <m.div
-                        className=" w-full md:w-[50%] z-50"
+                        className="w-full md:w-[50%] z-50"
                          initial={{ x: 20 }}
                          animate={imageLoaded ? { x: 0 } : false}
                          transition={{ duration: 0.5, delay: 0.2 }}
 
                     >
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
-                            <div className="relative h-52 overflow-hidden">
+                            <div className="relative h-52  overflow-hidden">
                                 <Image
-                                    src={ProjectCardContent.imageUrl || "/placeholder.svg"}
+                                    src={ProjectCardContent.imageUrl || "project"}
                                     alt="Project"
                                     layout="fill"
-                                    objectFit="contain"
+                                    objectFit="contain w-full"
                                     loading="eager"
                                     priority
-                                    onLoad={() => setImageLoaded(true)} // mark image as loaded
+                                    onLoad={() => setImageLoaded(true)}
                                 />
                             </div>
                         </Link>
@@ -152,13 +152,14 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                                 className="relative h-[40vh] sm:h-[65vh] overflow-hidden"
                             >
                                 <Image
-                                    src={ProjectCardContent.imageUrl || "/placeholder.svg"}
+                                    src={ProjectCardContent.imageUrl || "project"}
                                     alt="Project"
                                     layout="fill"
                                     objectFit="contain"
                                     loading="eager"
+                                    blurDataURL="/placeholder.png"
                                     priority
-                                    onLoad={() => setImageLoaded(true)} // mark image as loaded
+                                    onLoad={() => setImageLoaded(true)}
                                 />
                             </div>
                         </Link>

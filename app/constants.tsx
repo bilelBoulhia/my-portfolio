@@ -150,7 +150,7 @@ export const techstack=[
     <TechStackTag stack={<StackIcon name="gsap" />} />,
     <TechStackTag stack={<StackIcon name="java" />} />,
     <TechStackTag stack={<StackIcon name="mysql" />} />,
-    <TechStackTag stack={<StackIcon name="Net" />} />,
+    <TechStackTag stack={<StackIcon name="microsoft" />} />,
     <TechStackTag stack={<StackIcon name="nodejs" />} />,
     <TechStackTag stack={<StackIcon name="npm" />} />,
     <TechStackTag stack={<StackIcon className='bg-white rounded-full p-1' name="render" />} />,
@@ -170,7 +170,7 @@ export const WebsitesList =
             description: "a website for checking out and applying house of ideas scientific club various activies including workshops and evnets",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#030304', '#38B2AC', '#3178C6'],
-            imageUrl: "https://i.ibb.co/ZzfmGGQv/Capture-1.png",
+            imageUrl: "/images/hi.png",
             projectUrl: "https://www.houseofideas.club",
             githubUrl: "https://github.com/bilelBoulhia/House-of-ideas"
         },
@@ -179,7 +179,7 @@ export const WebsitesList =
             description: "a website for pusblishing and reading articles for a scientific club",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
-            imageUrl: "https://i.ibb.co/qMtMwHVb/photo-6035050906766133098-w-1.jpg",
+            imageUrl: "/images/hiarticles.jpg",
             projectUrl: "https://hi-ejournal.vercel.app/",
             githubUrl: "https://github.com/bilelBoulhia/house-of-ideas-articles"
         },
@@ -188,7 +188,7 @@ export const WebsitesList =
             description: "a demp website for booking and looking a catalogue of a cinema",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
-            imageUrl: "https://i.ibb.co/xd3SSX0/photo-6035050906766133095-w-1.jpg",
+            imageUrl: "/images/cinemapic.jpg",
             projectUrl: "https://cinema-website-kappa.vercel.app",
             githubUrl: "https://github.com/bilelBoulhia/cinema-website"
         },
@@ -197,7 +197,7 @@ export const WebsitesList =
             description: "a demo webapp for a managing the the payroll of employess  ",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
-            imageUrl: "https://i.ibb.co/1GsGvc1D/Ix6aqs-QLhi-Zb.png",
+            imageUrl: "/images/meteo.png",
             projectUrl: "meteo1-nine.vercel.app",
             githubUrl: "https://github.com/bilelBoulhia/MeteoGestion"
         },
@@ -206,13 +206,34 @@ export const WebsitesList =
             description: "a website that sells a pest control product",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
-            imageUrl: "https://i.ibb.co/1Jsc0FJQ/image-1.png",
+            imageUrl: "/images/destrouch.png",
             projectUrl: "https://destrouch-gel.vercel.app",
             githubUrl: "https://github.com/ALaksell/DESTROUCH-GEL"
         },
 
     ]
 
+
+export const MobilePorjectsList = [
+    {
+        title: "hi qr code scanner",
+        description: "a mobile app for auto checking event visitors on a google appsheet",
+        technologies: ['React native', 'Google', 'TypeScript'],
+        techColors: ['#0f21cf', '#ffffff', '#3178C6'],
+        imageUrl: "/images/qr.png",
+        projectUrl: "https://github.com/bilelBoulhia/QR-Scanner-Trigger",
+        githubUrl: "https://github.com/bilelBoulhia/QR-Scanner-Trigger"
+    },
+    {
+        title: "WRT (win rah train)",
+        description: "a demo mobile app for sending real time reports of train location",
+        technologies: ['React native', 'Asp.Net', 'TypeScript'],
+        techColors: ['#0f21cf', '#9911a3', '#3178C6'],
+        imageUrl: "/images/wrt.png",
+        projectUrl: "https://github.com/bilelBoulhia/WinRahTrain/releases/tag/v1",
+        githubUrl: "https://github.com/bilelBoulhia/WinRahTrain"
+    }
+]
 export const ToolsProjects = [
     {
         title: "Telegram Coin Singaling Bot",
@@ -281,24 +302,3 @@ export const backendProjects = [
     },
 ]
 
-
-export const MobilePorjectsList = [
-    {
-        title: "hi qr code scanner",
-        description: "a mobile app for auto checking event visitors on a google appsheet",
-        technologies: ['React native', 'Google', 'TypeScript'],
-        techColors: ['#0f21cf', '#ffffff', '#3178C6'],
-        imageUrl: "https://i.ibb.co/8LRVmCD7/Untitled-1-1.png",
-        projectUrl: "https://github.com/bilelBoulhia/QR-Scanner-Trigger",
-        githubUrl: "https://github.com/bilelBoulhia/QR-Scanner-Trigger"
-    },
-    {
-        title: "WRT (win rah train)",
-        description: "a demo mobile app for sending real time reports of train location",
-        technologies: ['React native', 'Asp.Net', 'TypeScript'],
-        techColors: ['#0f21cf', '#9911a3', '#3178C6'],
-        imageUrl: "https://i.ibb.co/B2JVWVjY/Untitled-1.png",
-        projectUrl: "https://github.com/bilelBoulhia/WinRahTrain/releases/tag/v1",
-        githubUrl: "https://github.com/bilelBoulhia/WinRahTrain"
-    }
-]

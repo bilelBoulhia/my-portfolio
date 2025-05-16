@@ -72,9 +72,7 @@ const OverviewSection = () => {
                         </m.span>
 
                     </div>
-                    <m.div
-
-                        exit={{width: 0}}
+                    <m.div exit={{width: 0}}
                         transition={{
                             delay: 0.5,
                         }}
