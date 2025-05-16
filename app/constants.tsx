@@ -160,32 +160,7 @@ export const techstack=[
 ]
 
 
-export const screens = [
-    {
-        id: 1,
-        content: () => import('@/app/screens/screen-1')
 
-    },
-    {
-        id: 2,
-        content: ()=> import('@/app/screens/screen-2')
-    }
-    ,
-    {
-        id: 3,
-        content: ()=> import('@/app/screens/screen-3')
-    },
-    {
-        id: 4,
-        content: ()=> import('@/app/screens/screen-4')
-    },
-    {
-        id: 5,
-        content: ()=> import('@/app/screens/screen-5')
-    }
-
-
-]
 
 
 export const WebsitesList =

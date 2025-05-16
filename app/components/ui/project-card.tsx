@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { FaGithub } from "react-icons/fa"
 import { m } from "motion/react"
+import { useState } from "react"
 
 
 interface ProjectCardContent {
@@ -22,7 +23,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
-
+    const [imageLoaded, setImageLoaded] = useState(false);
     return (
         <div className="flex justify-center  items-center py-10">
             <div className="relative backdrop-filter w-[320px] sm:w-[400px] md:w-[700px] shadow-4xl rounded-xl overflow-hidden">
@@ -53,20 +54,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ ProjectCardContent}) => {
                         </div>
                     </div>
 
-                    <div className="  w-full md:w-[50%] z-50">
+                    <m.div
+                        className=" w-full md:w-[50%] z-50"
+                         initial={{ x: 20 }}
+                         animate={imageLoaded ? { x: 0 } : false}
+                         transition={{ duration: 0.5, delay: 0.2 }}
+
+                    >
                         <Link href={ProjectCardContent.projectUrl} target="_blank">
                             <div className="relative h-52 overflow-hidden">
                                 <Image
                                     src={ProjectCardContent.imageUrl || "/placeholder.svg"}
                                     alt="Project"
                                     layout="fill"
-                                    objectFit="cover"
+                                    objectFit="contain"
                                     loading="eager"
                                     priority
+                                    onLoad={() => setImageLoaded(true)} // mark image as loaded
                                 />
                             </div>
                         </Link>
-                    </div>
+                    </m.div>
                 </div>
             </div>
         </div>
@@ -79,6 +87,7 @@ interface ProjectCardPhoneProps {
 }
 
 const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent }) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
     return (
         <div className="flex justify-center items-center py-10">
             <m.div
@@ -89,7 +98,7 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                     <m.div
                         className="relative z-10 overflow-hidden p-4 flex md:w-[50%]  flex-col justify-center"
                         initial={{ x: -20 }}
-                        animate={{ x: 0 }}
+                        animate={imageLoaded ? { x: 0 } : false}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <div className="flex items-center  justify-between mb-2">
@@ -146,9 +155,10 @@ const ProjectCardPhone: React.FC<ProjectCardPhoneProps> = ({ ProjectCardContent 
                                     src={ProjectCardContent.imageUrl || "/placeholder.svg"}
                                     alt="Project"
                                     layout="fill"
-                                    priority
                                     objectFit="contain"
                                     loading="eager"
+                                    priority
+                                    onLoad={() => setImageLoaded(true)} // mark image as loaded
                                 />
                             </div>
                         </Link>
