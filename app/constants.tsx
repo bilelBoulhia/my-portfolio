@@ -6,6 +6,11 @@ import {InstagramLogoIcon} from "@radix-ui/react-icons";
 import {Mail, Phone} from "lucide-react";
 import TechStackTag from "@/app/components/ui/tech-stack-tag";
 import StackIcon from "tech-stack-icons";
+import screen1 from "@/app/screens/screen-1";
+import screen2 from "@/app/screens/screen-2";
+import screen3 from "@/app/screens/screen-3";
+import screen4 from "@/app/screens/screen-4";
+import screen5 from "@/app/screens/screen-5";
 
 export const links = [
     {
@@ -302,3 +307,26 @@ export const backendProjects = [
     },
 ]
 
+export const screens = [
+    {
+        id: 1,
+        content: screen1
+    },
+    {
+        id: 2,
+        content: screen2
+    },
+    {
+        id: 3,
+        content: screen3
+
+    },
+    {
+        id: 4,
+        content: screen4
+    },
+    {
+        id: 5,
+        content: screen5
+    }
+];

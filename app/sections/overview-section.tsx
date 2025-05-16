@@ -29,7 +29,7 @@ const OverviewSection = () => {
                     }}
                     alt={'pdp'}
                 />
-                <div className='flex flex-col  mt-10 justify-start items-start'>
+                <div className='flex flex-col  mt-5 justify-start items-start'>
                     <div className='inline-flex  gap-4 text-4xl sm:text-5xl overflow-hidden  font-bold flex-row '>
                         <div className="overflow-hidden w-full bg-[#0a0a0a] ">
                             <m.h1
@@ -79,7 +79,7 @@ const OverviewSection = () => {
 
                         className='flex  overflow-hidden flex-col h-full justify-center  max-w-xl'>
                         <m.p
-                            initial={{y: 250}}
+                            initial={{y: '200%'}}
                             animate={{y: 0}}
                             exit={{width: 0}}
                             transition={{

@@ -1,49 +1,12 @@
 'use client'
 
 import { FloatingDock } from "@/app/components/ui/floating-docks";
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, m } from "motion/react";
-import dynamic from "next/dynamic";
-import { links } from "@/app/constants";
-import {Spinner} from "@/app/components/ui/spinner"; // assumed to exist
 
-const screens = [
-    {
-        id: 1,
-        content: dynamic(() => import('@/app/screens/screen-1'), {
-            loading: () => <Spinner />,
-            ssr: false
-        })
-    },
-    {
-        id: 2,
-        content: dynamic(() => import('@/app/screens/screen-2'), {
-            loading: () => <Spinner />,
-            ssr: false
-        })
-    },
-    {
-        id: 3,
-        content: dynamic(() => import('@/app/screens/screen-3'), {
-            loading: () => <Spinner />,
-            ssr: false
-        })
-    },
-    {
-        id: 4,
-        content: dynamic(() => import('@/app/screens/screen-4'), {
-            loading: () => <Spinner />,
-            ssr: false
-        })
-    },
-    {
-        id: 5,
-        content: dynamic(() => import('@/app/screens/screen-5'), {
-            loading: () => <Spinner />,
-            ssr: false
-        })
-    }
-];
+import {links, screens} from "@/app/constants";
+
+
 
 export default function Home() {
     const [sectionId, setId] = useState<number>(1);
@@ -59,9 +22,7 @@ export default function Home() {
 
             <AnimatePresence mode='wait'>
                 <m.div key={sectionId}>
-                    <Suspense fallback={<Spinner />}>
-                        {LoadedComponent ? <LoadedComponent /> : null}
-                    </Suspense>
+                    {LoadedComponent ? <LoadedComponent /> : null}
                 </m.div>
             </AnimatePresence>
         </main>

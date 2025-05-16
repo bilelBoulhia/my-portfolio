@@ -58,6 +58,11 @@ export default function RootLayout({
         />
         <link
             rel="preload"
+            href="/images/destrouch.png"
+            as="image"
+        />
+        <link
+            rel="preload"
             href="/images/meteo.png"
             as="image"
         />
@@ -71,16 +76,7 @@ export default function RootLayout({
             href="/images/wrt.png"
             as="image"
         />
-        <link
-            rel="preload"
-            href="https://i.ibb.co/8LRVmCD7/Untitled-1-1.png"
-            as="image"
-        />
-        <link
-            rel="preload"
-            href="https://i.ibb.co/B2JVWVjY/Untitled-1.png"
-            as="image"
-        />
+
         <title>portfolio</title>
     </head>
 
