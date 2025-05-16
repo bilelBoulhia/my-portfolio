@@ -14,7 +14,7 @@ const OverviewSection = () => {
                     initial={{x:phone ? '-150%' : 0, y:phone ? 0 : '-150%'}}
                     animate={{x:0,y:0}}
                     className='w-[15rem] will-change-transform z-2  self-center rounded-2xl h-auto'
-                    src='https://i.ibb.co/KxxWkVDv/pexels-italo-melo-881954-2379004-1-1-1.webp'
+                    src='/images/me.webp'
                     exit={{
                         x: phone ? '-200%' : '0',
                         y: phone ? '0%' : '-200%'

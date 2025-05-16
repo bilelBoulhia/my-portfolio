@@ -40,7 +40,47 @@ export default function RootLayout({
   return (
     <html lang="en">
     <head>
-        <link rel="preload" as="image" href="https://i.ibb.co/KxxWkVDv/pexels-italo-melo-881954-2379004-1-1-1.webp"/>
+        <link rel="preload" as="image" href="/images/me.webp"/>
+        <link
+            rel="preload"
+            href="/images/cinemapic.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/images/hi.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/images/hiarticles.jpg"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/images/meteo.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/images/qr.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="/images/wrt.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/8LRVmCD7/Untitled-1-1.png"
+            as="image"
+        />
+        <link
+            rel="preload"
+            href="https://i.ibb.co/B2JVWVjY/Untitled-1.png"
+            as="image"
+        />
         <title>portfolio</title>
     </head>
 
@@ -48,8 +88,8 @@ export default function RootLayout({
         <body className={`${genos.variable}  overflow-x-hidden antialiased`}>
         <NoiseEffect/>
         {children}
-       <Analytics mode="production" />;
-      </body>
+        <Analytics mode="production"/>;
+        </body>
     </LazyMotion>
     </html>
   );
