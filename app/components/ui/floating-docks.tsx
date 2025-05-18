@@ -30,7 +30,7 @@ export const FloatingDock = ({
         >
             <motion.button
                 onClick={toggleNav}
-                className="relative flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 shadow-lg  z-10"
+                className="relative flex items-center  justify-center w-12 h-12 rounded-full bg-neutral-900 shadow-lg  z-10"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={false}
@@ -51,7 +51,7 @@ export const FloatingDock = ({
                 >
                     <motion.div className="w-6 h-6 gap-14 flex  items-center justify-center" initial={false}>
                         <motion.span
-                            className="absolute block  h-0.5 w-4 bg-white rounded-full"
+                            className="absolute block  h-0.5 w-4 bg-[#bcbcbc] rounded-full"
                             animate={{
                                 rotate: isOpen ? 45 : 0,
                                 translateY: isOpen ? 0 : -2,
@@ -60,7 +60,7 @@ export const FloatingDock = ({
                         />
 
                         <motion.span
-                            className="absolute block h-0.5 w-4 bg-white rounded-full"
+                            className="absolute block h-0.5 w-4 bg-[#bcbcbc] rounded-full"
                             animate={{
                                 rotate: isOpen ? -45 : 0,
                                 translateY: isOpen ? 0 : 2,
@@ -73,7 +73,7 @@ export const FloatingDock = ({
 
             </motion.button>
 
-            <div className={`items-center w-[4rem] m-auto flex flex-col gap-4 rounded-2xl bg-neutral-900 py-4 pb-3`}>
+            <div className={`items-center w-[4rem] m-auto  flex flex-col gap-4 rounded-2xl bg-neutral-900 py-4 pb-3`}>
                 {items.map((item, index) => (
                     <motion.div
                         key={index}

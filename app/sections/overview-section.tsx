@@ -99,7 +99,7 @@ const OverviewSection = () => {
                             }}
                             className='relative overflow-hidden'>
 
-                            <div className="relative  float-start   pt-4">
+                            <div className="relative  float-start  pt-4">
 
                                     <m.a
                                         href="https://drive.google.com/file/d/1JTYb8ozg0XouJKv7Pslhjoh_XA_b7Lqf/view?usp=sharing"
