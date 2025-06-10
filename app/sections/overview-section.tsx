@@ -102,7 +102,7 @@ const OverviewSection = () => {
                             <div className="relative  float-start  pt-4">
 
                                     <m.a
-                                        href="https://drive.google.com/file/d/1JTYb8ozg0XouJKv7Pslhjoh_XA_b7Lqf/view?usp=sharing"
+                                        href="https://drive.google.com/file/d/1TkPoy7heVWk-Y0lHBjbZlJFOUE5Lll9-/view?usp=drive_link"
                                         download="Billel_Boulahia_Resume.pdf"
 
 
