@@ -171,7 +171,7 @@ export const techstack=[
 export const WebsitesList =
     [
         {
-            title: "House of ideas",
+            title: "House of ideas(freelance)",
             description: "a website for checking out and applying house of ideas scientific club various activies including workshops and evnets",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#030304', '#38B2AC', '#3178C6'],
@@ -180,7 +180,7 @@ export const WebsitesList =
             githubUrl: "https://github.com/bilelBoulhia/House-of-ideas"
         },
         {
-            title: "HI articels",
+            title: "HI articels(freelance)",
             description: "a website for pusblishing and reading articles for a scientific club",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
@@ -189,7 +189,7 @@ export const WebsitesList =
             githubUrl: "https://github.com/bilelBoulhia/house-of-ideas-articles"
         },
         {
-            title: "Cinemato",
+            title: "Cinemato (project personnal)",
             description: "a demp website for booking and looking a catalogue of a cinema",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
@@ -198,7 +198,7 @@ export const WebsitesList =
             githubUrl: "https://github.com/bilelBoulhia/cinema-website"
         },
         {
-            title: "meteo app",
+            title: "meteo app (project personnal)",
             description: "a demo webapp for a managing the the payroll of employess  ",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
@@ -207,13 +207,30 @@ export const WebsitesList =
             githubUrl: "https://github.com/bilelBoulhia/MeteoGestion"
         },
         {
-            title: "Destroch gel",
+            title: "Destroch gel(freelance)",
             description: "a website that sells a pest control product",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
             imageUrl: "/images/destrouch.png",
             projectUrl: "https://destrouch-gel.vercel.app",
             githubUrl: "https://github.com/ALaksell/DESTROUCH-GEL"
+        },        {
+            title: "Altacodis",
+            description: "a website for a development company",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#000000', '#38B2AC', '#3178C6'],
+            imageUrl: "/images/altacodis.png",
+            projectUrl: "https://altacodis.com",
+
+        },
+              {
+            title: "tontest",
+            description: "a website for a development company",
+            technologies: ['Next.js', 'Tailwind', 'TypeScript'],
+            techColors: ['#000000', '#38B2AC', '#3178C6'],
+            imageUrl: "/images/altacodis.png",
+            projectUrl: "https://tontest.accesm.ca/",
+
         },
 
     ]
@@ -221,7 +238,7 @@ export const WebsitesList =
 
 export const MobilePorjectsList = [
     {
-        title: "hi qr code scanner",
+        title: "hi qr code scanner(freelance)",
         description: "a mobile app for auto checking event visitors on a google appsheet",
         technologies: ['React native', 'Google', 'TypeScript'],
         techColors: ['#0f21cf', '#ffffff', '#3178C6'],
@@ -230,7 +247,7 @@ export const MobilePorjectsList = [
         githubUrl: "https://github.com/bilelBoulhia/QR-Scanner-Trigger"
     },
     {
-        title: "WRT (win rah train)",
+        title: "WRT (win rah train)(freelance)",
         description: "a demo mobile app for sending real time reports of train location",
         technologies: ['React native', 'Asp.Net', 'TypeScript'],
         techColors: ['#0f21cf', '#9911a3', '#3178C6'],
@@ -241,7 +258,7 @@ export const MobilePorjectsList = [
 ]
 export const ToolsProjects = [
     {
-        title: "Telegram Coin Singaling Bot",
+        title: "Telegram Coin Singaling Bot(freelance)",
         projectType: "Bot",
         description: "a Bot service that determines the best coins with liquidity and send signals of the selected coins",
         technologies: ['Asp net', 'JWT', 'Sql'],
@@ -250,7 +267,7 @@ export const ToolsProjects = [
         githubUrl: "https://github.com/bilelBoulhia/telegram-bot-for-trade-spoting"
     },
     {
-        title: "reddit popup remover",
+        title: "reddit popup remover(project personnal)",
         description: "an extension that removes +18 popup without having to open an account",
         technologies: ['Google'],
         projectType: "Extension",
@@ -259,7 +276,7 @@ export const ToolsProjects = [
         githubUrl: "https://github.com/bilelBoulhia/reddit-nsfw-popup-remover"
     },
     {
-        title: "mass Exit from Facebook",
+        title: "mass Exit from Facebook(project personnal)",
         description: "a selenium bot that auto exit all groups since there is no feature for that in the app",
         projectType: "automated script",
         technologies: ['Maven', 'Java', 'Selenium'],
@@ -268,7 +285,7 @@ export const ToolsProjects = [
         githubUrl: "https://github.com/bilelBoulhia/Mass-Leave-from-facebook--Script"
     },
     {
-        title: "Html-Pdf converter",
+        title: "Html-Pdf converter(project personnal)",
         description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
         projectType: "CLI app",
         technologies: ['Maven', 'Pico ClI',],
@@ -277,7 +294,7 @@ export const ToolsProjects = [
         githubUrl: "https://github.com/bilelBoulhia/Convert-Html-to-Pdf"
     },
     {
-        title: "start apps from cmd",
+        title: "start apps from cmd(project personnal)",
         description: "Stunning, customizable and open-source components for your next app. Time to give your code a vacation.",
         projectType: "windows  app",
         technologies: ['Winform', 'Windows'],
@@ -290,7 +307,7 @@ export const ToolsProjects = [
 
 export const backendProjects = [
     {
-        title: "backend of articles app",
+        title: "backend of articles app(project personnal)",
         description: "a compete backend with auth and database for an articles app ",
         technologies: ['Asp net', 'JWT', 'Sql'],
         techColors: ['#102475', '#1074b3', '#bf3314'],
@@ -298,7 +315,7 @@ export const backendProjects = [
         githubUrl: "https://github.com/bilelBoulhia/backend-service-for-a-blog-post-app"
     },
     {
-        title: "wrt backend",
+        title: "wrt backend(project personnal)",
         description: "a backend that uses websockts for real time data",
         technologies: ['Asp.net', 'JWT', 'Sql', 'SignalR'],
         techColors: ['#102475', '#1074b3', '#bf3314', '#5814bf'],
