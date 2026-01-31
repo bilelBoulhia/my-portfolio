@@ -221,16 +221,16 @@ export const WebsitesList =
             techColors: ['#000000', '#38B2AC', '#3178C6'],
             imageUrl: "/images/altacodis.png",
             projectUrl: "https://altacodis.com",
-
+ githubUrl: "/"
         },
-              {
+        {
             title: "tontest",
             description: "a website for a development company",
             technologies: ['Next.js', 'Tailwind', 'TypeScript'],
             techColors: ['#000000', '#38B2AC', '#3178C6'],
             imageUrl: "/images/altacodis.png",
             projectUrl: "https://tontest.accesm.ca/",
-
+            githubUrl: "/"
         },
 
     ]
