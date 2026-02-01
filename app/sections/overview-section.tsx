@@ -10,25 +10,7 @@ const OverviewSection = () => {
     return (
         <div className='w-full h-full'>
             <div className='flex p-3 sm:p-0 flex-col md:inline-flex md:flex-row  md:max-h-[22rem]  gap-4  '>
-                <m.img
-                    initial={{x:phone ? '-150%' : 0, y:phone ? 0 : '-150%'}}
-                    animate={{x:0,y:0}}
-                    className='w-[15rem] will-change-transform z-2  self-center rounded-2xl h-auto'
-                    src='/images/me.webp'
-                    exit={{
-                        x: phone ? '-200%' : '0',
-                        y: phone ? '0%' : '-200%'
-                    }}
-                    transition={{
-                        duration: 0.5,
-                        delay: 0.5,
-                        ease: "easeInOut",
-                        transitionEnd: {
-                            display: "none"
-                        }
-                    }}
-                    alt={'pdp'}
-                />
+               
                 <div className='flex flex-col  mt-5 justify-start items-start'>
                     <div className='inline-flex  gap-4 text-4xl sm:text-5xl overflow-hidden  font-bold flex-row '>
                         <div className="overflow-hidden w-full bg-[#0a0a0a] ">
@@ -50,7 +32,7 @@ const OverviewSection = () => {
                         </div>
 
                         <div style={{zIndex: -1}}
-                             className='absolute overflow-hidden inset-0 w-[20%] bg-[#0a0a0a] h-full '/>
+                             className='absolute overflow-hidden inset-0 w-[9rem] bg-[#0a0a0a] h-full '/>
 
                         <m.span
                             initial={{x: "-130%"}}
